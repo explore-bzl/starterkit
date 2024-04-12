@@ -69,3 +69,10 @@ build:remote --extra_execution_platforms=//exec_platforms:starter
 ```
 bazel build //battle:showdown --config=remote
 ```
+
+## How to publish the images
+```
+$ $(nix-build --no-out-link default.nix -A containerImages.starterKit-i686.push) <docker-registry> <username> <password>
+$ $(nix-build --no-out-link default.nix -A containerImages.starterKit-x86_64.push) <docker-registry> <username> <password>
+$ $(nix-build --no-out-link default.nix -A containerImages.starterKit-x86_64-i686.push) <docker-registry> <username> <password>
+```
