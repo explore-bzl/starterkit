@@ -6,6 +6,7 @@
   helix,
   niv,
   statix,
+  deadnix,
 }:
 mkShell {
   name = "starterkit-shell";
@@ -16,5 +17,6 @@ mkShell {
     helix
     niv
     statix
+    deadnix
   ];
 }

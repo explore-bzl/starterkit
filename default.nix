@@ -6,6 +6,13 @@
     config = {};
   };
 
+  mkTestGlibcBinary = {is32Bit ? false}:
+    nixpkgs.callPackage ./testGlibcBinary.nix {
+      is32Bit = is32Bit;
+      # nixpkgs 23.05 has the latest glibc (2.37) supported by uninative
+      nixpkgs_src = external_sources.nixpkgs-23_05;
+    };
+
   busyboxStatic = nixpkgs.callPackage ./nix/busyboxStatic.nix {};
 
   mkUninative = arch: nixpkgs.callPackage ./nix/uninative.nix {uninative-arch = arch;};
@@ -14,7 +21,11 @@
 
   containerImages = nixpkgs.callPackage ./nix/containerImages.nix {inherit busyboxStatic uninative;};
 
+  testContainerImages = nixpkgs.callPackage ./nix/tests.nix {
+    inherit containerImages mkTestGlibcBinary;
+  };
+
   devShell = nixpkgs.callPackage ./nix/devShell.nix {};
 in {
-  inherit containerImages devShell nixpkgs uninative;
+  inherit containerImages devShell nixpkgs uninative testContainerImages;
 }

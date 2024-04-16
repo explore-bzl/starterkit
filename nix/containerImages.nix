@@ -1,11 +1,14 @@
 {
   busyboxStatic,
-  uninative,
   dockerTools,
-  skopeo,
-  writeShellScript,
   glibc,
+  gnutar,
   lib,
+  skopeo,
+  stdenv,
+  uninative,
+  writeShellScript,
+  zstd,
 }: let
   buildPushContainerScript = import ./pushContainerImage.nix {
     inherit lib skopeo writeShellScript;
