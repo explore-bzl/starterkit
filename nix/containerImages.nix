@@ -7,85 +7,93 @@
   glibc,
   lib,
 }: let
-  ldCache = archs: let
-    ldconfig = writeShellScript "ldconfig" ''
-      exec ${glibc.bin}/bin/ldconfig -v -f etc/ld.so.conf -C etc/ld.so.cache -r $PWD
-    '';
-    conf =
-      lib.concatMapStringsSep "\n" (x: ''
-        echo /lib/${x}-linux-gnu >> etc/ld.so.conf
-        echo /usr/lib/${x}-linux-gnu >> etc/ld.so.conf
-      '')
-      archs;
-  in ''
-    ${conf}
-    ${ldconfig}
-  '';
-
   buildPushContainerScript = import ./pushContainerImage.nix {
     inherit lib skopeo writeShellScript;
   };
 
-  extraCommands = commands: ''
-    chmod u+w -R etc lib usr
-    ${lib.concatStringsSep "\n" commands}
-    chmod u-w -R etc lib usr
-  '';
-
   imageConfig = {
     title,
     description,
+    includeShell,
   }: {
-    Cmd = ["/bin/sh"];
-    Label = lib.strings.concatStrings (lib.strings.intersperse " " [
-      "org.opencontainers.image.authors=\"r2r-dev,AleksanderGondek\""
-      "org.opencontainers.image.url=\"https://github.com/explore-bzl/starterkit\""
-      "org.opencontainers.image.title=\"${title}\""
-      "org.opencontainers.image.description=\"${description}\""
-    ]);
+    Cmd =
+      if includeShell
+      then ["/bin/sh"]
+      else [];
+    Env =
+      if includeShell
+      then ["PATH=/bin"]
+      else [];
+    Labels = {
+      "org.opencontainers.image.authors" = "r2r-dev,AleksanderGondek";
+      "org.opencontainers.image.url" = "https://github.com/explore-bzl/starterkit";
+      "org.opencontainers.image.title" = title;
+      "org.opencontainers.image.description" = description;
+    };
     Workdir = "/";
   };
 
-  buildStarterKit = name: archs: rec {
+  buildStarterKit = {
+    name,
+    includeShell,
+    archs,
+    description,
+  }: rec {
     image = dockerTools.buildImage {
       inherit name;
-      fromImage = ashOnly.image;
-      keepContentsDirlinks = true;
       config = imageConfig {
-        title = name;
-        description = "Barebone image containing only busybox sh and glibc.";
+        title = "starterkit-${name}";
+        inherit description includeShell;
       };
-      copyToRoot = map (x: lib.getAttr x uninative) archs;
-      extraCommands = extraCommands ([
-          (ldCache archs)
-        ]
-        ++ lib.optional (lib.length archs > 1) ''
-          ln -sf /usr/lib/i686-linux-gnu/locale/locale-archive \
-                 usr/lib/x86_64-linux-gnu/locale/locale-archive
-        '');
-    };
-    push = buildPushContainerScript image;
-  };
-
-  ashOnly = rec {
-    image = dockerTools.buildImage {
-      name = "starterkit-ash";
-      config = imageConfig {
-        title = "starterkit-ash";
-        description = "Barebone image containing only busybox sh.";
-      };
-      copyToRoot = [busyboxStatic];
-      extraCommands = ''
-        mkdir etc
-        echo "root:x:0:0:root:/:/bin/sh" > etc/passwd
-        chmod u-w -R bin etc
+      copyToRoot = lib.optional includeShell busyboxStatic ++ map (arch: uninative.${arch}) archs;
+      extraCommands = let
+        ldconfigScript = writeShellScript "ldconfig" ''
+          exec ${glibc.bin}/bin/ldconfig -v -f etc/ld.so.conf -C etc/ld.so.cache -r $PWD
+        '';
+        conf =
+          lib.concatMapStringsSep "\n" (arch: ''
+            echo /lib/${arch}-linux-gnu >> etc/ld.so.conf
+            echo /usr/lib/${arch}-linux-gnu >> etc/ld.so.conf
+          '')
+          archs;
+      in ''
+        chmod -R u+w .
+        ${lib.optionalString includeShell "mkdir -p etc; echo \"root:x:0:0:root:/:/bin/sh\" > etc/passwd"}
+        ${lib.optionalString (archs != []) (conf + ldconfigScript)}
+        ${lib.optionalString (lib.length archs > 1) "ln -sf /usr/lib/i686-linux-gnu/locale/locale-archive usr/lib/x86_64-linux-gnu/locale/locale-archive"}
+        chmod -R u-w .
       '';
     };
     push = buildPushContainerScript image;
   };
-in {
-  inherit ashOnly;
-  starterKit-i686 = buildStarterKit "starterkit-i686" ["i686"];
-  starterKit-x86_64 = buildStarterKit "starterkit-x86_64" ["x86_64"];
-  starterKit-x86_64-i686 = buildStarterKit "starterkit-x86_64-i686" ["x86_64" "i686"];
-}
+
+  descriptionTemplate = {
+    includeShell,
+    archs,
+  }: let
+    shellPart =
+      if includeShell
+      then " with a minimal shell (busybox sh)"
+      else "";
+    archPart =
+      if archs == []
+      then ""
+      else " providing glibc support for ${lib.concatStringsSep ", " archs} architecture(s)";
+  in "Barebone container image${shellPart}${archPart}.";
+in
+  lib.genAttrs [
+    "empty"
+    "ash"
+    "ash-i686"
+    "ash-x86_64"
+    "ash-x86_64-i686"
+    "i686"
+    "x86_64"
+    "x86_64-i686"
+  ] (name:
+    buildStarterKit rec {
+      inherit name;
+      includeShell = lib.hasInfix "ash" name;
+      archs = lib.filter (arch: builtins.elem arch ["i686" "x86_64"]) (lib.splitString "-" name);
+      description = descriptionTemplate {inherit includeShell archs;};
+    })
