@@ -41,6 +41,7 @@
   }: rec {
     image = dockerTools.buildImage {
       inherit name;
+      keepContentsDirlinks = true;
       config = imageConfig {
         title = "starterkit-${name}";
         inherit description includeShell;

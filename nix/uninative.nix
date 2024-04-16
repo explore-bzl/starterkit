@@ -32,14 +32,13 @@ in
         _smv $dir{.tmp,/${uninative-arch}-linux-gnu}
       done
 
-      for link in lib etc; do
-        _sln /''${link} usr/local/oe-sdk-hardcoded-buildpath/sysroots/${uninative-arch}-pokysdk-linux/$link
-      done
-
+      _sln /etc usr/local/oe-sdk-hardcoded-buildpath/sysroots/${uninative-arch}-pokysdk-linux/etc
       if [ "${uninative-arch}" = "i686" ]; then
           _sln /lib/i686-linux-gnu/ld-linux.so.2 lib/ld-linux.so.2
+          _sln /lib usr/local/oe-sdk-hardcoded-buildpath/sysroots/${uninative-arch}-pokysdk-linux/lib
       elif [ "${uninative-arch}" = "x86_64" ]; then
           _sln /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 lib64/ld-linux-x86-64.so.2
+          _sln /lib64 usr/local/oe-sdk-hardcoded-buildpath/sysroots/${uninative-arch}-pokysdk-linux/lib
       fi
 
       cp -a . $out/
