@@ -1,78 +1,99 @@
-# StarterKit
-Welcome to StarterKit! Imagine this as your trusty backpack, filled with just the essentials you need for building software across different lands - I mean, Linux distributions. Inspired by the Yocto Project's Uninative concept (a cool mix of "universal" and "native"), we're all about making sure you get a smooth and consistent build experience.
+# “glibc”-only containers
 
-Inside this kit, you'll find everything tuned for running both the old-school 32bit and the more modern 64bit Linux ELF binaries. What's in the box? A dynamic linker/loader, the latest glibc, and an "Ash" shell from busybox that's as reliable as your favorite multi-tool.
+Starterkit is a distro-agnostic, vertical slice of Linux FHS, trimmed down to provide only a functional “glibc”. Effectively, it consists only of `/lib/{arch}-linux-gnu`. 
 
-### Starters include
-## empty
-This Starter is as empty as it gets, a blank canvas awaiting your unique touch.
+## Why? What problem does this project solve?
+It is a pragmatic way of validating / ensuring that a certain executed binary is either: (1) delivered with its own dependencies (self-contained) or (2) relies solely on “glibc” and references it in a “portable” manner. 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+In other words, Starterkit is an execution environment crafted specifically to only allow “glibc” as a pre-existing dependency that can be relied upon. Any other assumptions will break the execution, even if it refers to files / directories mentioned in Linux FHS or some specific Linux distro. 
 
-## ash
-Solo trainer mode.
+## Comparison against similar projects
+1. [Google distroless containers](https://github.com/GoogleContainerTools/distroless) - created images are connected to Debian distribution and contain the whole base filesystem hierarchy that the Starterkit specifically wants to prevent from being used. If you do not care about that aspect, this is the project you should use.
+2. [Alpine containers](https://github.com/alpinelinux/docker-alpine) - created images are using muslc - even with `glibc` compatibility lib, there is a risk of binaries written for `glibc` to misbehave. If you do not care about that risk, and you do not mind Linux FHS you should try it out.
 
-## i386 / ash-i386
-Perfect for those nostalgic or simpler adventures.
+## Base operating system
 
-## x86_64 / ash-x86_64
-The choice of champions and the most sought-after among trainers.
+None. Starterkit is not based on any Linux distro and it obtains its `glibc` from [Yocto Uninative project](https://docs.yoctoproject.org/gatesgarth/ref-manual/ref-classes.html#uninative-bbclass). 
 
-## x86_64-i386 / ash-x86_64-i386
-For those who've embarked on the quest to catch 'em all.
+Currently used version of uninative: **4.4 (glibc 2.38)**.
 
-## Crafting Your Starter
-```
-docker build . -t starter
-```
+## How to...
 
-## How to Use Your Starters
-### For Local Training
-```
-docker run -it --rm starter:latest
-```
+### Use the container images?
 
-### As a Remote Gym Leader
-1. Define your gym's platform in Bazel as follows:
+The images are built using [nix](https://nixos.org/explore/) but they can be used by any [OCI Certified](https://opencontainers.org/community/certified/) runtime.
+
+### Know what images are available?
+
+| Image                                                                   | Latest Hash | Architecture |
+|-------------------------------------------------------------------------|-------------|--------------|
+| harbor.apps.morrigna.rules-nix.buiild/explore-bzl/starterkit-x86_64     |             | x86_64       |
+| harbor.apps.morrigna.rules-nix.buiild/explore-bzl/starterkit-ash-x86_64 |             | x864_64      |
+| ... To be described ...                                                 |             |              |
+
+### Use Starterkit as Bazel RBE platform?
+1. Define the platform as follows:
 ```
 # exec_platforms/BUILD.bazel
 platform(
-    name = "starter",
+    name = "starterkit",
     constraint_values = [
         "@platforms//os:linux",
         "@platforms//cpu:x86_64",
     ],
     exec_properties = {
-        "container-image": "docker://your.build.league/starter@sha256:acb0d018dc58736e9cb9ac23d8dd095cd38dea0d4f790dca4a0b04d41c7c8f3e",
-            "dockerRunAsRoot": "true"
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/starterkit-ash-x86_64@sha256:38290c15c950643e52b10e326cc1889fd06f5ebf4f0bb4453ad4351e8e8daf0f",
     },
 )
 ```
 
-2. Prepare your .bazelrc for the upcoming battles:
+2. Prepare your .bazelrc for the RBE
 ```
 # .bazelrc
-build:remote --bes_results_url=https://your.build.center/invocation/
-build:remote --bes_backend=grpcs://grpc.buildleague.com
-build:remote --remote_cache=grpcs://buildstorage.best
-build:remote --remote_timeout=3600
-build:remote --remote_executor=grpcs://trusted.buildcompanion.com
-build:remote --jobs=64
+build:remote --remote_executor=grpcs://rbe.build.com
 build:remote --experimental_guard_against_concurrent_changes
 
 build:remote --strategy=remote
 build:remote --genrule_strategy=remote
 build:remote --spawn_strategy=remote
 
-build:remote --extra_execution_platforms=//exec_platforms:starter
+build:remote --extra_execution_platforms=//exec_platforms:starterkit
 ```
 
-3. Challenge the league with `remote` config:
+3. Run the builds with `remote` config:
 ```
 bazel build //battle:showdown --config=remote
 ```
 
-## How to publish the images
+### Build the images from scratch?
+
+```
+$ nix-build default.nix -A containerImages.starterKit-x86_64.image
+```
+
+### Publish the images?
+
 ```
 $ $(nix-build --no-out-link default.nix -A containerImages.starterKit-i686.push) <docker-registry> <username> <password>
-$ $(nix-build --no-out-link default.nix -A containerImages.starterKit-x86_64.push) <docker-registry> <username> <password>
-$ $(nix-build --no-out-link default.nix -A containerImages.starterKit-x86_64-i686.push) <docker-registry> <username> <password>
 ```
+
+## Project origins
+One of the main appeals of Bazel and its Remote Build Execution, is that it can reduce the build times of large, heterogeneous build systems from hours to seconds. To fulfill that premise. Bazel actions have to be reproducible and hermetic [1]. The latter means that all of the entities involved in the build (source code, compilers but also compiler deps etc.) are isolated from the host system and the state of said host does affect the build. For all practical purposes, it means describing all dependencies in such a way that Bazel may place  them and use them from within its `execroot` [2] (which in turn, vastly improves composability). 
+
+Said approach is not easy to achieve in practice - many tools, compilers, Bazel rules and even Bazel itself (sic!) [3] assume things to be present on the host machine that executes Bazel action and reach out of the `execroot` without second thought. While it is acceptable compromise, where given Bazel WORKSPACE builds only for a very limited amount of configurations (of target Architecture, OS, etc.), it very quickly becomes troublesome in setups that need to cross-compile for a myriad of target platforms, especially when intermediate code-generation steps are involved. 
+
+Simple example is a CPP project that has to be compiled for many architectures (aarch64, amd64, mipsel, ppce64 … and more)  - the choice is either to have dedicated worker machines with matching architecture or use cross-compilers. While using cross-compilers, one can use container images with globally installed packages (pinned-down per target architecture) or describe the toolchains so that they are all relocated under `execroot`. In all but last approaches, Bazel does not really govern compilation dependencies and they are managed external to the WORKSPACE, which invites a lot of places for the hermeticity to be broken.  
+
+This project is the result of suffering through making aforementioned toolchains, dependencies and tools to be relocatable under `execroot` and having their dependencies fully described so that the Bazel RBE may easily compose an action environment for all iof its needs and use minimal container images. 
+
+As it is not always practical or possible, to trace all dependencies of a given tool/compiler/Bazel rule/etc. upfront, Starterkit makes it dead simple to validate if a build is truly not depending on anything else but the bare `glibc` - by the means of stripping everything else. This approach both provides a minimal execution environment for Bazel RBE and does ensure, that nothing besides glibc is used. 
+
+The cut-off point has been chosen for the `glibc` level, as in the author's experience, there is a significant amount of binaries that will need a non-trivial amount of work to be used without it. Therefore it is a compromise between attempt to make Bazel builds truly hermetic and the limitations of prevalent applications. 
+
+---
+
+[1] Hermeticity described in Bazel docs: https://bazel.build/basics/hermeticity 
+
+[2] What is Bazel execroot: https://bazel.buil/remote/output-directories 
+
+[3] Example of Bazel own non-hermetic assumptions: https://github.com/bazelbuild/bazel/blob/45dc2fc960216d1ee772f1a9c8d0c4d5524b76f4/tools/test/test-setup.sh 
