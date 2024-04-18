@@ -1,0 +1,27 @@
+name: "publish-images"
+run-name: "Build and publish container images for commit ${{ github.sha }}"
+
+on:
+  push:
+    branches: ["canon"]
+
+jobs:
+  build-and-publish:
+    name: "build-and-publish"
+    runs-on: ["ubuntu-latest"]
+    steps:
+      - name: "Install nix"
+        uses: cachix/install-nix-action@v26
+
+      - name: "Checkout 'canon' branch of the repo"
+        uses: actions/checkout@v4
+        with:
+          clean: true
+
+      - name: "Build and publish the images"
+        shell: bash
+        env:
+          harbor_user: ${{ secrets.harbor_user }}
+          harbor_token: ${{ secrets.harbor_token }}
+        run: |2
+          $(nix-build --no-out-link default.nix -A pushAllContainerImages) harbor.apps.morrigna.rules-nix.build/explore-bzl "${HARBOR_USER}" "${HARBOR_TOKEN}"
