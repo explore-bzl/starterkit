@@ -24,7 +24,7 @@ in
       _sln() { mkdir -p "$(dirname "$2")" && [ ! -e "$2" ] && ln -sf "$1" "$2"; }
       _smv() { mkdir -p "$(dirname "$2")" && [ ! -e "$2" ] && mv "$1" "$2"; }
 
-      find . -type d -name 'audit' -o -name '.debug' | xargs rm -rf
+      find . -type d -name 'audit' -o -name '.debug' -o -name 'locale' | xargs rm -rf
       rm -rf usr/bin sbin var etc/ld.so.*
 
       for dir in lib usr/lib; do
