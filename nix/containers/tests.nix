@@ -3,25 +3,25 @@
   dockerTools,
   gnutar,
   lib,
-  mkTestGlibcBinary,
+  mkHelloWorldGlibc,
   skopeo,
   stdenv,
   writeShellScript,
   zstd,
 }: let
-  testGlibcBinary = {
-    "i686" = mkTestGlibcBinary {is32Bit = true;};
-    "x86_64" = mkTestGlibcBinary {is32Bit = false;};
+  helloWorldGlibc = {
+    "i686" = mkHelloWorldGlibc {is32Bit = true;};
+    "x86_64" = mkHelloWorldGlibc {is32Bit = false;};
   };
 
   ubuntuDateutils = {
     "i686" = null;
-    "x86_64" = import ./ubuntuDateutils.nix {
+    "x86_64" = import ../pkgs/ubuntuDateutils.nix {
       inherit gnutar stdenv zstd;
     };
   };
 
-  buildPushContainerScript = import ./pushContainerImage.nix {
+  buildPushContainerScript = import ./push.nix {
     inherit lib skopeo writeShellScript;
   };
 
@@ -48,9 +48,9 @@ in
   ] (
     arch:
       buildStarterKitTest {
-        name = "starterkit-${arch}-testGlibcBinary";
-        testImage = (builtins.getAttr arch containerImages).image;
-        testBinary = builtins.getAttr arch testGlibcBinary;
+        name = "starterkit-${arch}-helloWorldGlibc";
+        testImage = (builtins.getAttr "ash-${arch}" containerImages).image;
+        testBinary = builtins.getAttr arch helloWorldGlibc;
         cmd = ["/bin/hello_cpp"];
       }
   )

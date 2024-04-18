@@ -5,26 +5,26 @@
     inherit localSystem;
     config = {};
   };
+  
+  devShell = nixpkgs.callPackage ./nix/devShell.nix {};
 
-  mkTestGlibcBinary = {is32Bit ? false}:
-    nixpkgs.callPackage ./nix/testGlibcBinary.nix {
+  busyboxStatic = nixpkgs.callPackage ./nix/pkgs/busyboxStatic.nix {};
+
+  mkUninative = arch: nixpkgs.callPackage ./nix/pkgs/uninative.nix {uninative-arch = arch;};
+
+  uninative = nixpkgs.lib.genAttrs ["x86_64" "i686"] mkUninative;
+
+  containerImages = nixpkgs.callPackage ./nix/containers/images.nix {inherit busyboxStatic uninative;};
+
+  mkHelloWorldGlibc = {is32Bit ? false}:
+    nixpkgs.callPackage ./nix/pkgs/helloWorldGlibc.nix {
       is32Bit = is32Bit;
       nixpkgs_src = external_sources.nixpkgs;
     };
 
-  busyboxStatic = nixpkgs.callPackage ./nix/busyboxStatic.nix {};
-
-  mkUninative = arch: nixpkgs.callPackage ./nix/uninative.nix {uninative-arch = arch;};
-
-  uninative = nixpkgs.lib.genAttrs ["x86_64" "i686"] mkUninative;
-
-  containerImages = nixpkgs.callPackage ./nix/containerImages.nix {inherit busyboxStatic uninative;};
-
-  testContainerImages = nixpkgs.callPackage ./nix/tests.nix {
-    inherit containerImages mkTestGlibcBinary;
+  testContainerImages = nixpkgs.callPackage ./nix/containers/tests.nix {
+    inherit containerImages mkHelloWorldGlibc;
   };
-
-  devShell = nixpkgs.callPackage ./nix/devShell.nix {};
 in {
   inherit containerImages devShell nixpkgs uninative testContainerImages;
 }

@@ -65,7 +65,7 @@
     }
   '';
 
-  makeTestGlibcBinary = stdenv: interpreter:
+  makeHelloWorldGlibcBinary = stdenv: interpreter:
     stdenv.mkDerivation {
       name = "hello-world-dynamic-nostore";
       nativeBuildInputs = [patchelf removeReferencesTo];
@@ -82,4 +82,4 @@
       '';
     };
 in
-  makeTestGlibcBinary chosenStdenv interpreter
+  makeHelloWorldGlibcBinary chosenStdenv interpreter

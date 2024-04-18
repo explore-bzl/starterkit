@@ -10,7 +10,7 @@
   writeShellScript,
   zstd,
 }: let
-  buildPushContainerScript = import ./pushContainerImage.nix {
+  buildPushContainerScript = import ./push.nix {
     inherit lib skopeo writeShellScript;
   };
 
