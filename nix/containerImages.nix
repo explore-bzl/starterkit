@@ -64,7 +64,6 @@
         chmod -R u+w .
         ${lib.optionalString includeShell "mkdir -p etc; echo \"root:x:0:0:root:/:/bin/sh\" > etc/passwd"}
         ${lib.optionalString (archs != []) (conf + ldconfigScript)}
-        ${lib.optionalString (lib.length archs > 1) "ln -sf /usr/lib/i686-linux-gnu/locale/locale-archive usr/lib/x86_64-linux-gnu/locale/locale-archive"}
         chmod -R u-w .
       '';
     };
