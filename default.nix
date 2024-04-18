@@ -13,6 +13,7 @@
   uninative = nixpkgs.callPackage ./nix/pkgs/uninative.nix {};
 
   containerImages = nixpkgs.callPackage ./nix/containers/images.nix {inherit busyboxStatic uninative;};
+  pushAllContainerImages = nixpkgs.callPackage ./nix/containers/pushAll.nix {inherit containerImages;};
 
   mkHelloWorldGlibc = {is32Bit ? false}:
     nixpkgs.callPackage ./nix/pkgs/helloWorldGlibc.nix {
@@ -24,5 +25,5 @@
     inherit containerImages mkHelloWorldGlibc;
   };
 in {
-  inherit containerImages devShell nixpkgs uninative testContainerImages;
+  inherit containerImages devShell nixpkgs pushAllContainerImages uninative testContainerImages;
 }
