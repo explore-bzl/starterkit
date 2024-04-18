@@ -50,7 +50,7 @@ in
       buildStarterKitTest {
         name = "starterkit-${arch}-testGlibcBinary";
         testImage = (builtins.getAttr arch containerImages).image;
-        testBinary = (builtins.getAttr arch testGlibcBinary);
+        testBinary = builtins.getAttr arch testGlibcBinary;
         cmd = ["/bin/hello_cpp"];
       }
   )
@@ -58,7 +58,7 @@ in
     "x86_64-ubuntu" = buildStarterKitTest {
       name = "starterkit-x86_64-testUbuntuDateutils";
       testImage = (builtins.getAttr "ash-x86_64" containerImages).image;
-      testBinary = (builtins.getAttr "x86_64" ubuntuDateutils);
+      testBinary = builtins.getAttr "x86_64" ubuntuDateutils;
       cmd = ["/bin/dateutils.dseq" "2024-04-01" "2024-04-25" "--skip" "sat,sun"];
     };
   }

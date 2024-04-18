@@ -7,10 +7,9 @@
   };
 
   mkTestGlibcBinary = {is32Bit ? false}:
-    nixpkgs.callPackage ./testGlibcBinary.nix {
+    nixpkgs.callPackage ./nix/testGlibcBinary.nix {
       is32Bit = is32Bit;
-      # nixpkgs 23.05 has the latest glibc (2.37) supported by uninative
-      nixpkgs_src = external_sources.nixpkgs-23_05;
+      nixpkgs_src = external_sources.nixpkgs;
     };
 
   busyboxStatic = nixpkgs.callPackage ./nix/busyboxStatic.nix {};

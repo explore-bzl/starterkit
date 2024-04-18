@@ -1,6 +1,7 @@
 {
   stdenv,
   patchelf,
+  removeReferencesTo,
   writeTextDir,
   system,
   wrapCCWith,
@@ -44,7 +45,7 @@
   interpreter =
     if is32Bit
     then "/lib/ld-linux.so.2"
-    else "/lib/ld-linux-x86-64.so.2";
+    else "/lib64/ld-linux-x86-64.so.2";
 
   createSource = name: code: writeTextDir name code;
 
@@ -67,18 +68,17 @@
   makeTestGlibcBinary = stdenv: interpreter:
     stdenv.mkDerivation {
       name = "hello-world-dynamic-nostore";
-      buildInputs = [patchelf];
+      nativeBuildInputs = [patchelf removeReferencesTo];
       phases = ["buildPhase" "installPhase"];
       buildPhase = ''
-        ${stdenv.cc}/bin/gcc ${src}/hello.c -o hello_c
-        ${stdenv.cc}/bin/g++ ${srcCpp}/hello.cpp -o hello_cpp
+        gcc ${src}/hello.c -o hello_c
+        g++ ${srcCpp}/hello.cpp -o hello_cpp
       '';
       installPhase = ''
         mkdir -p $out/bin
-        cp hello_c hello_cpp $out/bin/
-        for exe in $out/bin/*; do
-          patchelf --set-interpreter ${interpreter} $exe
-        done
+        cp hello* $out/bin/
+        find "$out" -type f -exec patchelf --set-interpreter ${interpreter} --remove-rpath '{}' +
+        find "$out" -type f -exec remove-references-to -t ${stdenv.cc.libc} -t ${stdenv.cc.cc.lib} -t $out '{}' +
       '';
     };
 in
