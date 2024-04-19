@@ -43,21 +43,21 @@
   };
 in
   lib.genAttrs [
-    "i686"
-    "x86_64"
+    "i686-cc"
+    "x86_64-cc"
   ] (
     arch:
       buildStarterKitTest {
         name = "starterkit-${arch}-helloWorldGlibc";
         testImage = (builtins.getAttr "ash-${arch}" containerImages).image;
-        testBinary = builtins.getAttr arch helloWorldGlibc;
+        testBinary = builtins.getAttr (builtins.replaceStrings ["-cc"] [""] arch) helloWorldGlibc;
         cmd = ["/bin/hello_cpp"];
       }
   )
   // {
-    "x86_64-ubuntu" = buildStarterKitTest {
-      name = "starterkit-x86_64-testUbuntuDateutils";
-      testImage = (builtins.getAttr "ash-x86_64" containerImages).image;
+    "x86_64-cc-ubuntu" = buildStarterKitTest {
+      name = "starterkit-x86_64-cc-testUbuntuDateutils";
+      testImage = (builtins.getAttr "ash-x86_64-cc" containerImages).image;
       testBinary = builtins.getAttr "x86_64" ubuntuDateutils;
       cmd = ["/bin/dateutils.dseq" "2024-04-01" "2024-04-25" "--skip" "sat,sun"];
     };

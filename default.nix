@@ -5,14 +5,12 @@
     inherit localSystem;
     config = {};
   };
-  
+
   devShell = nixpkgs.callPackage ./nix/devShell.nix {};
 
   busyboxStatic = nixpkgs.callPackage ./nix/pkgs/busyboxStatic.nix {};
 
-  mkUninative = arch: nixpkgs.callPackage ./nix/pkgs/uninative.nix {uninative-arch = arch;};
-
-  uninative = nixpkgs.lib.genAttrs ["x86_64" "i686"] mkUninative;
+  uninative = nixpkgs.callPackage ./nix/pkgs/uninative.nix {};
 
   containerImages = nixpkgs.callPackage ./nix/containers/images.nix {inherit busyboxStatic uninative;};
 
