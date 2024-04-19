@@ -2,14 +2,25 @@
   busyboxStatic,
   dockerTools,
   glibc,
-  gnutar,
   lib,
   skopeo,
-  stdenv,
   uninative,
   writeShellScript,
-  zstd,
 }: let
+  inherit
+    (lib)
+    cartesianProductOfSets
+    concatMapStringsSep
+    concatStringsSep
+    filter
+    nameValuePair
+    listToAttrs
+    optional
+    optionals
+    optionalString
+    removeSuffix
+    ;
+
   buildPushContainerScript = import ./push.nix {
     inherit lib skopeo writeShellScript;
   };
@@ -19,14 +30,8 @@
     description,
     includeShell,
   }: {
-    Cmd =
-      if includeShell
-      then ["/bin/sh"]
-      else [];
-    Env =
-      if includeShell
-      then ["PATH=/bin"]
-      else [];
+    Cmd = optional includeShell "/bin/sh";
+    Env = optional includeShell "PATH=/bin";
     Labels = {
       "org.opencontainers.image.authors" = "r2r-dev,AleksanderGondek";
       "org.opencontainers.image.url" = "https://github.com/explore-bzl/starterkit";
@@ -46,57 +51,63 @@
       inherit name;
       keepContentsDirlinks = true;
       config = imageConfig {
-        title = "starterkit-${name}";
         inherit description includeShell;
+        title = "starterkit-${name}";
       };
-      copyToRoot = lib.optional includeShell busyboxStatic ++ map (arch: uninative.${arch}) archs;
+      copyToRoot = optionals includeShell [busyboxStatic] ++ map (arch: uninative.${arch}) archs;
       extraCommands = let
-        ldconfigScript = writeShellScript "ldconfig" ''
-          exec ${glibc.bin}/bin/ldconfig -v -f etc/ld.so.conf -C etc/ld.so.cache -r $PWD
-        '';
-        conf =
-          lib.concatMapStringsSep "\n" (arch: ''
+        ldSetup = optionalString (archs != []) ''
+          ${concatMapStringsSep "\n" (arch: ''
             echo /lib/${arch}-linux-gnu >> etc/ld.so.conf
             echo /usr/lib/${arch}-linux-gnu >> etc/ld.so.conf
-          '')
-          archs;
+          '') (map (removeSuffix "-cc") archs)}
+          exec ${glibc.bin}/bin/ldconfig -v -f etc/ld.so.conf -C etc/ld.so.cache -r $PWD
+        '';
       in ''
         chmod -R u+w .
-        ${lib.optionalString includeShell "mkdir -p etc; echo \"root:x:0:0:root:/:/bin/sh\" > etc/passwd"}
-        ${lib.optionalString (archs != []) (conf + ldconfigScript)}
+        mkdir -p etc
+        ${ldSetup}
         chmod -R u-w .
       '';
     };
     push = buildPushContainerScript image;
   };
 
-  descriptionTemplate = {
-    includeShell,
-    archs,
-  }: let
-    shellPart =
-      if includeShell
-      then " with a minimal shell (busybox sh)"
-      else "";
-    archPart =
-      if archs == []
-      then ""
-      else " providing glibc support for ${lib.concatStringsSep ", " archs} architecture(s)";
-  in "Barebone container image${shellPart}${archPart}.";
+  variants = cartesianProductOfSets {
+    includeShell = [false true];
+    archs = [
+      []
+      ["i686"]
+      ["i686-cc"]
+      ["x86_64"]
+      ["x86_64-cc"]
+      ["i686" "x86_64"]
+      ["i686-cc" "x86_64"]
+      ["i686" "x86_64-cc"]
+      ["i686-cc" "x86_64-cc"]
+    ];
+  };
+
+  genMetadata = variant: let
+    inherit (variant) includeShell archs;
+    join = sep: parts: concatStringsSep sep (filter (s: s != "") parts);
+  in {
+    name = join "-" [
+      (optionalString includeShell "ash")
+      (optionalString (archs != []) (concatStringsSep "-" archs))
+    ];
+    description = join " " [
+      "Barebone container image"
+      (optionalString includeShell "with a minimal shell (busybox sh)")
+      (optionalString (archs != []) "providing glibc support for ${concatStringsSep " " archs} architecture(s)")
+    ];
+  };
 in
-  lib.genAttrs [
-    "empty"
-    "ash"
-    "ash-i686"
-    "ash-x86_64"
-    "ash-x86_64-i686"
-    "i686"
-    "x86_64"
-    "x86_64-i686"
-  ] (name:
-    buildStarterKit rec {
-      inherit name;
-      includeShell = lib.hasInfix "ash" name;
-      archs = lib.filter (arch: builtins.elem arch ["i686" "x86_64"]) (lib.splitString "-" name);
-      description = descriptionTemplate {inherit includeShell archs;};
-    })
+  listToAttrs (map (variant: let
+    inherit (genMetadata variant) name description;
+  in
+    nameValuePair name (buildStarterKit {
+      inherit name description;
+      inherit (variant) includeShell archs;
+    }))
+  variants)
