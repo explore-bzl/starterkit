@@ -20,8 +20,5 @@ jobs:
 
       - name: "Build and publish the images"
         shell: bash
-        env:
-          harbor_user: ${{ secrets.harbor_user }}
-          harbor_token: ${{ secrets.harbor_token }}
         run: |2
-          $(nix-build --no-out-link default.nix -A pushAllContainerImages) harbor.apps.morrigna.rules-nix.build/explore-bzl "${HARBOR_USER}" "${HARBOR_TOKEN}"
+          $(nix-build --no-out-link default.nix -A pushAllContainerImages) harbor.apps.morrigna.rules-nix.build/explore-bzl '${{ secrets.harbor_user }}' '${{ secrets.harbor_token }}'
