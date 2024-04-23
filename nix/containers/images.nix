@@ -3,9 +3,8 @@
   dockerTools,
   glibc,
   lib,
-  skopeo,
   uninative,
-  writeShellScript,
+  buildPushContainerScript,
 }: let
   inherit
     (lib)
@@ -20,10 +19,6 @@
     optionalString
     removeSuffix
     ;
-
-  buildPushContainerScript = import ./push.nix {
-    inherit lib skopeo writeShellScript;
-  };
 
   imageConfig = {
     title,

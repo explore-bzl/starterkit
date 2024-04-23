@@ -9,15 +9,21 @@
   binutils-unwrapped,
   overrideCC,
   pkgsi686Linux,
-  nixpkgs_src,
-  is32Bit ? false,
+  path,
+  lib,
 }: let
+  inherit (lib) cartesianProductOfSets nameValuePair listToAttrs;
+
+  variants = cartesianProductOfSets {
+    arch = ["x86_64" "i686"];
+  };
+
   createOverriddenStdenv = {
-    nixpkgs_src,
+    path,
     binutils-unwrapped,
     crossSystem ? null,
   }: let
-    nixpkgs = import nixpkgs_src {
+    nixpkgs = import path {
       inherit system;
       crossSystem = crossSystem;
     };
@@ -30,22 +36,6 @@
     };
   in
     overrideCC stdenv wrappedGcc;
-
-  overriddenStdenv = createOverriddenStdenv {inherit binutils-unwrapped nixpkgs_src;};
-  overriddenStdenv32 = createOverriddenStdenv {
-    inherit nixpkgs_src;
-    crossSystem = {config = "i686-linux";};
-    binutils-unwrapped = pkgsi686Linux.binutils-unwrapped;
-  };
-
-  chosenStdenv =
-    if is32Bit
-    then overriddenStdenv32
-    else overriddenStdenv;
-  interpreter =
-    if is32Bit
-    then "/lib/ld-linux.so.2"
-    else "/lib64/ld-linux-x86-64.so.2";
 
   createSource = name: code: writeTextDir name code;
 
@@ -65,9 +55,28 @@
     }
   '';
 
-  makeHelloWorldGlibcBinary = stdenv: interpreter:
-    stdenv.mkDerivation {
-      name = "hello-world-dynamic-nostore";
+  makeHelloWorldGlibcBinary = {
+    name,
+    arch,
+  }: let
+    overriddenStdenv = createOverriddenStdenv {
+      inherit path;
+      crossSystem =
+        if arch == "i686"
+        then {config = "i686-linux";}
+        else null;
+      binutils-unwrapped =
+        if arch == "i686"
+        then pkgsi686Linux.binutils-unwrapped
+        else binutils-unwrapped;
+    };
+    interpreter =
+      if arch == "i686"
+      then "/lib/ld-linux.so.2"
+      else "/lib64/ld-linux-x86-64.so.2";
+  in
+    overriddenStdenv.mkDerivation {
+      name = "hello-world-dynamic-nostore-${name}";
       nativeBuildInputs = [patchelf removeReferencesTo];
       phases = ["buildPhase" "installPhase"];
       buildPhase = ''
@@ -78,8 +87,19 @@
         mkdir -p $out/bin
         cp hello* $out/bin/
         find "$out" -type f -exec patchelf --set-interpreter ${interpreter} --remove-rpath '{}' +
-        find "$out" -type f -exec remove-references-to -t ${stdenv.cc.libc} -t ${stdenv.cc.cc.lib} -t $out '{}' +
+        find "$out" -type f -exec remove-references-to -t ${overriddenStdenv.cc.libc} -t ${overriddenStdenv.cc.cc.lib} -t $out '{}' +
       '';
     };
+
+  genMetadata = variant: {
+    name = variant.arch;
+  };
 in
-  makeHelloWorldGlibcBinary chosenStdenv interpreter
+  listToAttrs (map (variant: let
+    inherit (genMetadata variant) name;
+  in
+    nameValuePair name (makeHelloWorldGlibcBinary {
+      inherit name;
+      inherit (variant) arch;
+    }))
+  variants)

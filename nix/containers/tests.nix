@@ -1,30 +1,11 @@
 {
   containerImages,
   dockerTools,
-  gnutar,
   lib,
-  mkHelloWorldGlibc,
-  skopeo,
-  stdenv,
-  writeShellScript,
-  zstd,
+  helloWorldGlibc,
+  buildPushContainerScript,
+  ubuntuDateutils,
 }: let
-  helloWorldGlibc = {
-    "i686" = mkHelloWorldGlibc {is32Bit = true;};
-    "x86_64" = mkHelloWorldGlibc {is32Bit = false;};
-  };
-
-  ubuntuDateutils = {
-    "i686" = null;
-    "x86_64" = import ../pkgs/ubuntuDateutils.nix {
-      inherit gnutar stdenv zstd;
-    };
-  };
-
-  buildPushContainerScript = import ./push.nix {
-    inherit lib skopeo writeShellScript;
-  };
-
   buildStarterKitTest = {
     name,
     testImage,
@@ -35,30 +16,26 @@
       inherit name;
       fromImage = testImage;
       copyToRoot = testBinary;
-      config = {
-        Cmd = cmd;
-      };
+      config = {Cmd = cmd;};
     };
     push = buildPushContainerScript image;
   };
 in
-  lib.genAttrs [
-    "i686-cc"
-    "x86_64-cc"
-  ] (
-    arch:
-      buildStarterKitTest {
-        name = "starterkit-${arch}-helloWorldGlibc";
-        testImage = (builtins.getAttr "ash-${arch}" containerImages).image;
-        testBinary = builtins.getAttr (builtins.replaceStrings ["-cc"] [""] arch) helloWorldGlibc;
-        cmd = ["/bin/hello_cpp"];
-      }
-  )
+  lib.genAttrs ["i686-cc" "x86_64-cc"] (arch:
+    buildStarterKitTest {
+      name = "starterkit-${arch}-helloWorldGlibc";
+      testImage = containerImages."ash-${arch}".image;
+      testBinary = let
+        cleanArch = builtins.replaceStrings ["-cc"] [""] arch;
+      in
+        helloWorldGlibc.${cleanArch};
+      cmd = ["/bin/hello_cpp"];
+    })
   // {
     "x86_64-cc-ubuntu" = buildStarterKitTest {
       name = "starterkit-x86_64-cc-testUbuntuDateutils";
-      testImage = (builtins.getAttr "ash-x86_64-cc" containerImages).image;
-      testBinary = builtins.getAttr "x86_64" ubuntuDateutils;
+      testImage = containerImages."ash-x86_64-cc".image;
+      testBinary = ubuntuDateutils;
       cmd = ["/bin/dateutils.dseq" "2024-04-01" "2024-04-25" "--skip" "sat,sun"];
     };
   }
