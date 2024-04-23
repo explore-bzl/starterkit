@@ -71,7 +71,6 @@
   variants = cartesianProductOfSets {
     includeShell = [false true];
     archs = [
-      []
       ["i686"]
       ["i686-cc"]
       ["x86_64"]
