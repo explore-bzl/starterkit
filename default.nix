@@ -5,25 +5,20 @@
     inherit localSystem;
     config = {};
   };
+  skitPkgs = nixpkgs.callPackage ./nix/pkgs {};
+  callPackage = let
+    allPkgs = nixpkgs // skitPkgs;
+  in
+    nixpkgs.lib.callPackageWith (allPkgs
+      // {
+        callPackage = nixpkgs.lib.callPackageWith allPkgs;
+      });
 
-  devShell = nixpkgs.callPackage ./nix/devShell.nix {};
-
-  busyboxStatic = nixpkgs.callPackage ./nix/pkgs/busyboxStatic.nix {};
-
-  uninative = nixpkgs.callPackage ./nix/pkgs/uninative.nix {};
-
-  containerImages = nixpkgs.callPackage ./nix/containers/images.nix {inherit busyboxStatic uninative;};
-  pushAllContainerImages = nixpkgs.callPackage ./nix/containers/pushAll.nix {inherit containerImages;};
-
-  mkHelloWorldGlibc = {is32Bit ? false}:
-    nixpkgs.callPackage ./nix/pkgs/helloWorldGlibc.nix {
-      is32Bit = is32Bit;
-      nixpkgs_src = external_sources.nixpkgs;
-    };
-
-  testContainerImages = nixpkgs.callPackage ./nix/containers/tests.nix {
-    inherit containerImages mkHelloWorldGlibc;
-  };
-in {
-  inherit containerImages devShell nixpkgs pushAllContainerImages uninative testContainerImages;
-}
+  devShell = callPackage ./nix/devShell.nix {};
+  images = callPackage ./nix/containers {};
+in
+  {
+    inherit devShell;
+  }
+  // skitPkgs
+  // images
