@@ -68,19 +68,22 @@
     push = buildPushContainerScript image;
   };
 
-  variants = cartesianProductOfSets {
-    includeShell = [false true];
-    archs = [
-      ["i686"]
-      ["i686-cc"]
-      ["x86_64"]
-      ["x86_64-cc"]
-      ["i686" "x86_64"]
-      ["i686-cc" "x86_64"]
-      ["i686" "x86_64-cc"]
-      ["i686-cc" "x86_64-cc"]
-    ];
-  };
+  variants =
+    filter (variant: variant.includeShell != false || variant.archs != [])
+    (cartesianProductOfSets {
+      includeShell = [false true];
+      archs = [
+        []
+        ["i686"]
+        ["i686-cc"]
+        ["x86_64"]
+        ["x86_64-cc"]
+        ["i686" "x86_64"]
+        ["i686-cc" "x86_64"]
+        ["i686" "x86_64-cc"]
+        ["i686-cc" "x86_64-cc"]
+      ];
+    });
 
   genMetadata = variant: let
     inherit (variant) includeShell archs;
