@@ -7,6 +7,7 @@
   niv,
   statix,
   deadnix,
+  mdsh,
 }:
 mkShell {
   name = "starterkit-shell";
@@ -18,5 +19,6 @@ mkShell {
     niv
     statix
     deadnix
+    mdsh
   ];
 }
