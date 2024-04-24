@@ -30,6 +30,7 @@ The images are built using [nix](https://nixos.org/explore/) but they can be use
 <!-- BEGIN mdsh -->
 | Image | Pull |
 | ---   | ---  |
+| ash | `harbor.apps.morrigna.rules-nix.build/explore-bzl/ash:9m7shakbx4g5afqggrjml6d9ysw64kgl` |
 | ash-i686 | `harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686:8yg4l9249799q4ydvni5rp9mqdxjkimq` |
 | ash-i686-cc | `harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc:13dhvdm6z1hm1s7mfydhijvf7h64rs52` |
 | ash-i686-cc-x86_64 | `harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc-x86_64:aryxnryzd2jvg6pah2r7vy0n08dbkdr4` |
