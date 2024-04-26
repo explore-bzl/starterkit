@@ -4,6 +4,7 @@
   lib,
   helloWorldGlibc,
   buildPushContainerScript,
+  mkBwrapEnv,
   ubuntuDateutils,
 }: let
   buildStarterKitTest = {
@@ -19,6 +20,7 @@
       config = {Cmd = cmd;};
     };
     push = buildPushContainerScript image;
+    bwrap = mkBwrapEnv image;
   };
 in
   lib.genAttrs ["i686-cc" "x86_64-cc"] (arch:

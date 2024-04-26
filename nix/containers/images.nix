@@ -5,6 +5,7 @@
   lib,
   uninative,
   buildPushContainerScript,
+  mkBwrapEnv,
 }: let
   inherit
     (lib)
@@ -41,7 +42,7 @@
     includeShell,
     archs,
     description,
-  }: rec {
+  }: let
     image = dockerTools.buildImage {
       inherit name;
       keepContentsDirlinks = true;
@@ -65,8 +66,16 @@
         chmod -R u-w .
       '';
     };
-    push = buildPushContainerScript image;
-  };
+  in
+    {
+      inherit image;
+      push = buildPushContainerScript image;
+    }
+    // (
+      if includeShell
+      then {bwrap = mkBwrapEnv image;}
+      else {}
+    );
 
   variants = cartesianProductOfSets {
     includeShell = [false true];
