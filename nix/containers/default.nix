@@ -1,10 +1,11 @@
 {callPackage}: let
   buildPushContainerScript = callPackage ./push.nix {};
+  mkBwrapEnv = callPackage ./bwrap.nix {};
   containerImages = callPackage ./images.nix {
-    inherit buildPushContainerScript;
+    inherit buildPushContainerScript mkBwrapEnv;
   };
   testContainerImages = callPackage ./tests.nix {
-    inherit buildPushContainerScript containerImages;
+    inherit buildPushContainerScript mkBwrapEnv containerImages;
   };
   pushAllContainerImages = callPackage ./pushAll.nix {
     inherit containerImages;
