@@ -10,6 +10,9 @@
   pushAllContainerImages = callPackage ./pushAll.nix {
     inherit containerImages;
   };
+  runAllTestContainerImages = callPackage ./runTests.nix {
+    inherit testContainerImages;
+  };
 in {
-  inherit containerImages testContainerImages pushAllContainerImages;
+  inherit containerImages testContainerImages pushAllContainerImages runAllTestContainerImages;
 }

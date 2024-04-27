@@ -34,7 +34,7 @@ in
       cmd = ["/bin/hello_cpp"];
     })
   // {
-    "x86_64-cc-ubuntu" = buildStarterKitTest {
+    "ash-x86_64-cc-ubuntu" = buildStarterKitTest {
       name = "starterkit-x86_64-cc-testUbuntuDateutils";
       testImage = containerImages."ash-x86_64-cc".image;
       testBinary = ubuntuDateutils;
