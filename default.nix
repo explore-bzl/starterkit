@@ -1,4 +1,4 @@
-{localSystem ? builtins.currentSystem, ...} @ args: let
+{localSystem ? builtins.currentSystem, ...}: let
   external_sources = import ./nix/sources.nix;
 
   nixpkgs = import external_sources.nixpkgs {

@@ -78,7 +78,7 @@
     );
 
   variants =
-    filter (variant: variant.includeShell != false || variant.archs != [])
+    filter (variant: variant.includeShell || variant.archs != [])
     (cartesianProductOfSets {
       includeShell = [false true];
       archs = [

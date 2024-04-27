@@ -24,8 +24,7 @@
     crossSystem ? null,
   }: let
     nixpkgs = import path {
-      inherit system;
-      crossSystem = crossSystem;
+      inherit crossSystem system;
     };
     wrappedGcc = wrapCCWith {
       cc = nixpkgs.gcc-unwrapped;

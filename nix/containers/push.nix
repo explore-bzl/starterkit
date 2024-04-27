@@ -3,7 +3,6 @@
   skopeo,
   writeShellScript,
 }: let
-  inherit (lib) lists strings;
   pushContainerImage = containerImageDrv:
     writeShellScript "${containerImageDrv.imageName}.push" ''
       set -euo pipefail
