@@ -13,7 +13,7 @@
     optionalString
     ;
 
-  pname = "yocto-uninative";
+  name = "yocto-uninative";
   version = "4.4";
   baseURL = "http://downloads.yoctoproject.org/releases/uninative";
 
