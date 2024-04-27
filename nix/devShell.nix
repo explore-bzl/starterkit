@@ -1,6 +1,7 @@
 {
   mkShell,
   alejandra,
+  cacert,
   cocogitto,
   git,
   helix,
@@ -13,6 +14,7 @@ mkShell {
   name = "starterkit-shell";
   packages = [
     alejandra
+    cacert
     cocogitto
     git
     helix
