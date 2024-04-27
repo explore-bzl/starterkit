@@ -1,0 +1,26 @@
+name: "ci"
+run-name: "Run test container images for commit ${{ github.sha }}"
+
+on:
+  pull_request:
+    branches: ["canon"]
+  push:
+    branches: ["canon"]
+
+jobs:
+  build-and-run-test-images:
+    name: "build-and-run-test-images"
+    runs-on: ["ubuntu-latest"]
+    steps:
+      - name: "Install nix"
+        uses: cachix/install-nix-action@v26
+
+      - name: "Checkout 'canon' branch of the repo"
+        uses: actions/checkout@v4
+        with:
+          clean: true
+
+      - name: "Build and run test images"
+        shell: bash
+        run: |2
+          $(nix-build --no-out-link default.nix -A runAllTestContainerImages)
