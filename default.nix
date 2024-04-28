@@ -15,10 +15,11 @@
       });
 
   devShell = callPackage ./nix/devShell.nix {};
+  docs = callPackage ./nix/docs {inherit (images) containerImages;};
   images = callPackage ./nix/containers {};
 in
   {
-    inherit devShell;
+    inherit devShell docs;
   }
   // skitPkgs
   // images
