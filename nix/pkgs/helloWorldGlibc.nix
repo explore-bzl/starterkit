@@ -4,11 +4,13 @@
   writeTextDir,
   lib,
   gccMultiStdenv,
+  buildPackages,
+  genVariants,
 }: let
-  inherit (lib) cartesianProductOfSets nameValuePair listToAttrs optionalString;
-
-  variants = cartesianProductOfSets {
-    arch = ["x86_64" "i686"];
+  variants = genVariants {
+    attrs = {
+      arch = ["x86_64" "i686"];
+    };
   };
 
   createSource = name: code: writeTextDir name code;
@@ -43,8 +45,8 @@
       nativeBuildInputs = [patchelf removeReferencesTo];
       phases = ["buildPhase" "installPhase"];
       buildPhase = ''
-        gcc ${src}/hello.c ${optionalString (arch == "i686") "-m32"} -o hello_c
-        g++ ${srcCpp}/hello.cpp ${optionalString (arch == "i686") "-m32"} -o hello_cpp
+        gcc ${src}/hello.c ${lib.optionalString (arch == "i686") "-m32"} -o hello_c
+        g++ ${srcCpp}/hello.cpp ${lib.optionalString (arch == "i686") "-m32"} -o hello_cpp
       '';
       installPhase = ''
         mkdir -p $out/bin
@@ -58,11 +60,8 @@
     name = variant.arch;
   };
 in
-  listToAttrs (map (variant: let
-    inherit (genMetadata variant) name;
-  in
-    nameValuePair name (makeHelloWorldGlibcBinary {
-      inherit name;
-      inherit (variant) arch;
-    }))
-  variants)
+  buildPackages {
+    metaFun = genMetadata;
+    buildFun = makeHelloWorldGlibcBinary;
+    variants = variants;
+  }

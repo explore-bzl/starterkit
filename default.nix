@@ -1,22 +1,39 @@
 {localSystem ? builtins.currentSystem, ...}: let
-  external_sources = import ./nix/sources.nix;
+  nixpkgs = let
+    sources = import ./nix/sources.nix;
+  in
+    import sources.nixpkgs {
+      inherit localSystem;
+      config = {};
+    };
 
-  nixpkgs = import external_sources.nixpkgs {
-    inherit localSystem;
-    config = {};
-  };
-  skitPkgs = nixpkgs.callPackage ./nix/pkgs {};
-  callPackage = let
-    allPkgs = nixpkgs // skitPkgs;
+  mkCallPackage = extraPkgs: let
+    allPkgs = nixpkgs // extraPkgs;
   in
     nixpkgs.lib.callPackageWith (allPkgs
       // {
         callPackage = nixpkgs.lib.callPackageWith allPkgs;
       });
 
-  devShell = callPackage ./nix/devShell.nix {};
-  docs = callPackage ./nix/docs {inherit (images) containerImages;};
-  images = callPackage ./nix/containers {};
+  skitLib =
+    (mkCallPackage {})
+    ./nix/lib {};
+
+  skitPkgs =
+    (mkCallPackage skitLib)
+    ./nix/pkgs {};
+
+  images =
+    (mkCallPackage (skitLib // skitPkgs))
+    ./nix/containers {};
+
+  devShell =
+    (mkCallPackage {})
+    ./nix/devShell.nix {};
+
+  docs =
+    (mkCallPackage {inherit (images) containerImages;})
+    ./nix/docs {};
 in
   {
     inherit devShell docs;
