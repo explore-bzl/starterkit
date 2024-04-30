@@ -3,35 +3,26 @@
   dockerTools,
   glibc,
   lib,
+  genVariants,
+  buildPackages,
+  join,
   uninative,
   buildPushContainerScript,
   mkBwrapEnv,
 }: let
-  inherit
-    (lib)
-    cartesianProductOfSets
-    concatMapStringsSep
-    concatStringsSep
-    filter
-    nameValuePair
-    listToAttrs
-    optional
-    optionals
-    optionalString
-    removeSuffix
-    ;
+  inherit (lib) optional optionals optionalString concatMapStringsSep removeSuffix filter;
 
-  imageConfig = {
-    title,
-    description,
+  genImageConfig = {
+    name,
     includeShell,
+    description,
   }: {
     Cmd = optional includeShell "/bin/sh";
     Env = optional includeShell "PATH=/bin";
     Labels = {
       "org.opencontainers.image.authors" = "r2r-dev,AleksanderGondek";
       "org.opencontainers.image.url" = "https://github.com/explore-bzl/starterkit";
-      "org.opencontainers.image.title" = title;
+      "org.opencontainers.image.title" = "starterkit-${name}";
       "org.opencontainers.image.description" = description;
     };
     Workdir = "/";
@@ -43,28 +34,25 @@
     archs,
     description,
   }: let
+    config = genImageConfig {inherit name includeShell description;};
+    copyToRoot = optionals includeShell [busyboxStatic] ++ map (arch: uninative.${arch}) archs;
+    ldSetupCommands = concatMapStringsSep "\n" (arch: ''
+      echo /lib/${arch}-linux-gnu >> etc/ld.so.conf
+      echo /usr/lib/${arch}-linux-gnu >> etc/ld.so.conf
+    '') (map (removeSuffix "-cc") archs);
+    extraCommands = ''
+      chmod -R u+w .
+      mkdir -p etc
+      ${optionalString (archs != []) ldSetupCommands}
+      exec ${glibc.bin}/bin/ldconfig -v -f etc/ld.so.conf -C etc/ld.so.cache -r $PWD
+      chmod -R u-w .
+    '';
     image = dockerTools.buildImage {
       inherit name;
       keepContentsDirlinks = true;
-      config = imageConfig {
-        inherit description includeShell;
-        title = "starterkit-${name}";
-      };
-      copyToRoot = optionals includeShell [busyboxStatic] ++ map (arch: uninative.${arch}) archs;
-      extraCommands = let
-        ldSetup = optionalString (archs != []) ''
-          ${concatMapStringsSep "\n" (arch: ''
-            echo /lib/${arch}-linux-gnu >> etc/ld.so.conf
-            echo /usr/lib/${arch}-linux-gnu >> etc/ld.so.conf
-          '') (map (removeSuffix "-cc") archs)}
-          exec ${glibc.bin}/bin/ldconfig -v -f etc/ld.so.conf -C etc/ld.so.cache -r $PWD
-        '';
-      in ''
-        chmod -R u+w .
-        mkdir -p etc
-        ${ldSetup}
-        chmod -R u-w .
-      '';
+      config = config;
+      copyToRoot = copyToRoot;
+      extraCommands = extraCommands;
     };
   in
     {
@@ -77,9 +65,22 @@
       else {}
     );
 
-  variants =
-    filter (variant: variant.includeShell || variant.archs != [])
-    (cartesianProductOfSets {
+  genMetadata = variant: rec {
+    inherit (variant) includeShell archs;
+    name = join "-" [
+      (optionalString includeShell "ash")
+      (optionalString (archs != []) (join "-" archs))
+    ];
+    description = join " " [
+      "Barebone container image"
+      (optionalString includeShell "with a minimal shell (busybox sh)")
+      (optionalString (archs != []) "providing glibc support for ${join " " archs} architecture(s)")
+    ];
+  };
+
+  variants = genVariants {
+    filter = filter (variant: variant.includeShell || variant.archs != []);
+    attrs = {
       includeShell = [false true];
       archs = [
         []
@@ -92,28 +93,11 @@
         ["i686" "x86_64-cc"]
         ["i686-cc" "x86_64-cc"]
       ];
-    });
-
-  genMetadata = variant: let
-    inherit (variant) includeShell archs;
-    join = sep: parts: concatStringsSep sep (filter (s: s != "") parts);
-  in {
-    name = join "-" [
-      (optionalString includeShell "ash")
-      (optionalString (archs != []) (concatStringsSep "-" archs))
-    ];
-    description = join " " [
-      "Barebone container image"
-      (optionalString includeShell "with a minimal shell (busybox sh)")
-      (optionalString (archs != []) "providing glibc support for ${concatStringsSep " " archs} architecture(s)")
-    ];
+    };
   };
 in
-  listToAttrs (map (variant: let
-    inherit (genMetadata variant) name description;
-  in
-    nameValuePair name (buildStarterKit {
-      inherit name description;
-      inherit (variant) includeShell archs;
-    }))
-  variants)
+  buildPackages {
+    metaFun = genMetadata;
+    buildFun = buildStarterKit;
+    variants = variants;
+  }

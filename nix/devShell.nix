@@ -9,7 +9,6 @@
   niv,
   statix,
   deadnix,
-  mdsh,
 } @ args: let
   packages = lib.attrsets.attrValues (
     builtins.removeAttrs args ["mkShell" "lib"]
