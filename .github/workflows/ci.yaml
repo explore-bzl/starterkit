@@ -23,4 +23,4 @@ jobs:
       - name: "Build and run test images"
         shell: bash
         run: |2
-          $(nix-build --no-out-link default.nix -A runAllTestContainerImages)
+          $(nix-build --no-out-link default.nix -A images.test.all.run)

@@ -1,6 +1,6 @@
 {callPackage}: {
-  busyboxStatic = callPackage ./busyboxStatic.nix {};
-  uninative = callPackage ./uninative.nix {};
-  helloWorldGlibc = callPackage ./helloWorldGlibc.nix {};
-  ubuntuDateutils = callPackage ./ubuntuDateutils.nix {};
+  busyboxStatic = callPackage ./busybox {};
+  uninative = callPackage ./uninative {};
+  helloWorldGlibc = callPackage ./hello {};
+  ubuntuDateutils = callPackage ./dateutils {};
 }

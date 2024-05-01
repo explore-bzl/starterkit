@@ -1,6 +1,3 @@
-{
-  callPackage,
-  containerImages,
-}: {
-  readme = callPackage ./readme.nix {inherit containerImages;};
+{callPackage}: {
+  readme = callPackage ./readme.nix {};
 }
