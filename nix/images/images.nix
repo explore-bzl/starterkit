@@ -3,14 +3,13 @@
   dockerTools,
   glibc,
   lib,
-  genVariants,
   buildPackages,
   join,
   uninative,
   buildPushContainerScript,
   mkBwrapEnv,
 }: let
-  inherit (lib) optional optionals optionalString concatMapStringsSep removeSuffix filter;
+  inherit (lib) optional optionals optionalString concatMapStringsSep removeSuffix;
 
   genImageConfig = {
     name,
@@ -48,11 +47,8 @@
       chmod -R u-w .
     '';
     image = dockerTools.buildImage {
-      inherit name;
+      inherit name config copyToRoot extraCommands;
       keepContentsDirlinks = true;
-      config = config;
-      copyToRoot = copyToRoot;
-      extraCommands = extraCommands;
     };
   in
     {
@@ -77,27 +73,25 @@
       (optionalString (archs != []) "providing glibc support for ${join " " archs} architecture(s)")
     ];
   };
-
-  variants = genVariants {
-    filter = filter (variant: variant.includeShell || variant.archs != []);
-    attrs = {
-      includeShell = [false true];
-      archs = [
-        []
-        ["i686"]
-        ["i686-cc"]
-        ["x86_64"]
-        ["x86_64-cc"]
-        ["i686" "x86_64"]
-        ["i686-cc" "x86_64"]
-        ["i686" "x86_64-cc"]
-        ["i686-cc" "x86_64-cc"]
-      ];
-    };
-  };
 in
   buildPackages {
     metaFun = genMetadata;
     buildFun = buildStarterKit;
-    variants = variants;
+    variants = {
+      filter = variant: variant.includeShell || variant.archs != [];
+      attrs = {
+        includeShell = [false true];
+        archs = [
+          []
+          ["i686"]
+          ["i686-cc"]
+          ["x86_64"]
+          ["x86_64-cc"]
+          ["i686" "x86_64"]
+          ["i686-cc" "x86_64"]
+          ["i686" "x86_64-cc"]
+          ["i686-cc" "x86_64-cc"]
+        ];
+      };
+    };
   }

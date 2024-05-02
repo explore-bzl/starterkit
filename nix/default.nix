@@ -11,7 +11,7 @@ in rec {
     (mkCallPackage (skitLib // pkgs))
     ./images {};
   docs =
-    (mkCallPackage {inherit images;})
+    (mkCallPackage (skitLib // {inherit images;}))
     ./docs {};
   devShell =
     (mkCallPackage {})

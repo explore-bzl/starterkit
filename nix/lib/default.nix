@@ -3,29 +3,33 @@
     (lib)
     cartesianProductOfSets
     concatStringsSep
-    filter
     nameValuePair
     listToAttrs
     ;
+  filterContainerImages = attr: containerImages: lib.filterAttrs (_: v: v ? ${attr}) containerImages;
 in {
-  join = sep: parts: concatStringsSep sep (filter (s: s != "") parts);
-
-  genVariants = {
-    filter ? null,
-    attrs,
-  }:
-    if builtins.isNull filter
-    then (cartesianProductOfSets attrs)
-    else filter (cartesianProductOfSets attrs);
+  inherit filterContainerImages;
+  join = sep: parts: concatStringsSep sep (builtins.filter (s: s != "") parts);
 
   buildPackages = {
     metaFun,
     buildFun,
     variants,
-  }:
+  }: let
+    genVariants = {
+      filter ? null,
+      attrs,
+    }:
+      if builtins.isNull filter
+      then (cartesianProductOfSets attrs)
+      else builtins.filter filter (cartesianProductOfSets attrs);
+  in
     listToAttrs (map (variant: let
       meta = metaFun variant;
     in
       nameValuePair meta.name (buildFun (meta // variant)))
-    variants);
+    (genVariants variants));
+
+  concatContainerCommands = attr: containerImages: suffix:
+    lib.concatMapStringsSep "\n" (v: "${v.${attr}}${suffix}") (lib.attrValues (filterContainerImages attr containerImages));
 }
