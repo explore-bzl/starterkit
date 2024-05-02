@@ -1,0 +1,42 @@
+from_latest_tag = true
+ignore_merge_commits = false
+disable_changelog = false
+disable_bump_commit = false
+generate_mono_repository_global_tag = true
+
+branch_whitelist = []
+
+skip_ci = "[skip ci]"
+skip_untracked = false
+
+pre_bump_hooks = [
+  # Linting
+  "alejandra --check .",
+  "statix check .",
+  "cog check --from-latest-tag",
+  # Building
+  "nix-build default.nix -A images",
+  # Readme update
+  "nix-build default.nix -A docs.readme -o result-readme",
+  "cp result-readme ./README.md",
+]
+post_bump_hooks = []
+
+pre_package_bump_hooks = []
+post_package_bump_hooks = []
+tag_prefix = "v"
+
+[git_hooks]
+
+[commit_types]
+
+[changelog]
+path = "CHANGELOG.md"
+authors = [
+  { signature = "Aleksander Gondek", username = "AleksanderGondek" },
+  { signature = "r2r", username = "r2r-dev" },
+]
+
+[bump_profiles]
+
+[packages]
