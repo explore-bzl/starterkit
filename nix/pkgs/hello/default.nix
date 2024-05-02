@@ -5,14 +5,7 @@
   lib,
   gccMultiStdenv,
   buildPackages,
-  genVariants,
 }: let
-  variants = genVariants {
-    attrs = {
-      arch = ["x86_64" "i686"];
-    };
-  };
-
   createSource = name: code: writeTextDir name code;
 
   src = createSource "hello.c" ''
@@ -63,5 +56,9 @@ in
   buildPackages {
     metaFun = genMetadata;
     buildFun = makeHelloWorldGlibcBinary;
-    variants = variants;
+    variants = {
+      attrs = {
+        arch = ["x86_64" "i686"];
+      };
+    };
   }

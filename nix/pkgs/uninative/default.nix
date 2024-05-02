@@ -1,7 +1,6 @@
 {
   stdenv,
   fetchurl,
-  genVariants,
   join,
   buildPackages,
   lib,
@@ -73,16 +72,14 @@
     inherit (variant) arch cc;
     name = join "-" [arch (lib.optionalString cc "cc")];
   };
-
-  variants = genVariants {
-    attrs = {
-      arch = ["x86_64" "i686"];
-      cc = [true false];
-    };
-  };
 in
   buildPackages {
     metaFun = genMetadata;
     buildFun = buildUninative;
-    variants = variants;
+    variants = {
+      attrs = {
+        arch = ["x86_64" "i686"];
+        cc = [true false];
+      };
+    };
   }

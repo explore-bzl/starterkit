@@ -5,7 +5,6 @@
   buildPushContainerScript,
   mkBwrapEnv,
   ubuntuDateutils,
-  genVariants,
   buildPackages,
 }: let
   buildStarterKitTest = {
@@ -32,12 +31,6 @@
     cmd = ["/bin/hello_cpp"];
   };
 
-  variants = genVariants {
-    attrs = {
-      arch = ["i686-cc" "x86_64-cc"];
-    };
-  };
-
   ubuntuVariant = {
     "ash-x86_64-cc-ubuntu" = buildStarterKitTest {
       name = "starterkit-x86_64-cc-testUbuntuDateutils";
@@ -50,6 +43,10 @@ in
   buildPackages {
     metaFun = genMetadata;
     buildFun = buildStarterKitTest;
-    variants = variants;
+    variants = {
+      attrs = {
+        arch = ["i686-cc" "x86_64-cc"];
+      };
+    };
   }
   // ubuntuVariant
