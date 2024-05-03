@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.2.0](https://github.com/explore-bzl/starterkit/compare/7708120866140595a5d4172c4b4e084ab520389b..v0.2.0) - 2024-05-03
+#### Bug Fixes
+- **(cicd)** github actions lack of permissions and wrong triggers - ([815efc8](https://github.com/explore-bzl/starterkit/commit/815efc8cfcf4f760ef28e3e49a6d51f774522b9d)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+#### Features
+- **(ci)** unify checks run by cog and ci - ([7708120](https://github.com/explore-bzl/starterkit/commit/7708120866140595a5d4172c4b4e084ab520389b)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+- **(cicd)** introduce automated releasing process - ([89f5ae9](https://github.com/explore-bzl/starterkit/commit/89f5ae9c55f0f167ccad7188f7eadd3efd964f64)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## v0.1.0 - 2024-05-02
 #### Bug Fixes
 - missing ash image variant - (e9d40f5) - Artur Stachecki
