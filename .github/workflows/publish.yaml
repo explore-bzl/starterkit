@@ -4,9 +4,20 @@ run-name: "Publish changes for commit ${{ github.sha }}"
 on:
   push:
     branches: ["canon"]
-    tags:
-      # Run only for releases
-      - 'v*'
+    # If changelog was modified, it means that was the release
+    # Sane implementation would require creating steps specifically to extract tags
+    # (something that is not needed atm).
+    paths:
+      - "CHANGELOG.md"
+# Author soapbox:
+# GitHub actions do not honor combination of branches and tags as logical AND
+# statement - instead, it treats it as an OR requirements. This is counter-intuitive
+# and unhelpful behavior, but it is what it is.
+# Fortunately, combination of branches and path results in logical AND.
+# Therefore, the solution below will not work
+#    tags:
+#      # Run only for releases
+#      - 'v*'
 
 jobs:
   publish:
@@ -51,6 +62,7 @@ jobs:
       - name: "Create GitHub release"
         uses: ncipollo/release-action@v1
         with:
+          token: ${{ secrets.gh_pat }}
           bodyFile: ./release-notes.md
           makeLatest: "legacy"
           tag: ${{ steps.get_project_meta.outputs.version }}

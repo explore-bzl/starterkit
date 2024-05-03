@@ -4,9 +4,21 @@ run-name: "Release from commit ${{ github.sha }}"
 on:
   push:
     branches: ["canon"]
-    tags-ignore:
-      # Never run for releases
-      - 'v*'
+    # If only changelog and README were modified, it means that was the release
+    # Sane implementation would require creating steps specifically to extract tags
+    # (something that is not needed atm).
+    paths-ignore:
+      - "CHANGELOG.md"
+      - "README.md"
+# Author soapbox:
+# GitHub actions do not honor combination of branches and tags-ignore as logical AND
+# statement - instead, it treats it as an OR requirements. This is counter-intuitive
+# and unhelpful behavior, but it is what it is.
+# Fortunately, combination of branches and path results in logical AND.
+# Therefore, the solution below will not work
+#    tags-ignore:
+#      # Don't run for releases
+#      - 'v*'
 
 jobs:
   release:
@@ -38,6 +50,7 @@ jobs:
           fetch-tags: true
           # This is important, we do not do merges
           ref: ${{ github.event.pull_request.head.sha }}
+          token: ${{ secrets.gh_pat }}
 
       - name: "Set git users for release commit"
         run: |2
