@@ -29,7 +29,7 @@ jobs:
           # it can be ignored. 
           nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: "Checkout 'canon' branch of the repo"
+      - name: "Checkout target branch of the repo"
         uses: actions/checkout@v4
         with:
           clean: true
