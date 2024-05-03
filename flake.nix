@@ -6,7 +6,7 @@
   # All actual logic is bound to default.nix.
   inputs = {};
 
-  outputs = {_self}: let
+  outputs = {self}: let
     supportedSystems = ["x86_64-linux"];
     forSupportedSystems = f: builtins.map f supportedSystems;
     defineDevShells = system: {
