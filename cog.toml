@@ -10,12 +10,15 @@ skip_ci = "[skip ci]"
 skip_untracked = false
 
 pre_bump_hooks = [
-  # Linting
+  # Lint
   "alejandra --check .",
   "statix check .",
   "cog check --from-latest-tag",
-  # Building
-  "nix-build default.nix -A images",
+  # Build
+  "nix-build default.nix -A images --no-out-link",
+  # Test
+  "nix-build default.nix -A images.test.all.run -o result-test-all.sh",
+  "./result-test-all.sh",
   # Readme update
   "nix-build default.nix -A docs.readme -o result-readme",
   "cp result-readme ./README.md",
@@ -32,6 +35,10 @@ tag_prefix = "v"
 
 [changelog]
 path = "CHANGELOG.md"
+template = "remote"
+remote = "github.com"
+repository = "starterkit"
+owner = "explore-bzl"
 authors = [
   { signature = "Aleksander Gondek", username = "AleksanderGondek" },
   { signature = "r2r", username = "r2r-dev" },

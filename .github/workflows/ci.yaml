@@ -1,5 +1,5 @@
 name: "ci"
-run-name: "Run test container images for commit ${{ github.sha }}"
+run-name: "Validate commit ${{ github.sha }}"
 
 on:
   pull_request:
@@ -8,19 +8,45 @@ on:
     branches: ["canon"]
 
 jobs:
-  build-and-run-test-images:
-    name: "build-and-run-test-images"
+  validate-images:
+    name: "validate-images"
     runs-on: ["ubuntu-latest"]
+    defaults:
+      run:
+        shell: nix-shell --run "set -eo pipefail; source {0}"
+ 
     steps:
       - name: "Install nix"
         uses: cachix/install-nix-action@v26
+        with:
+          # This should not be here
+          # as it introduces the possibility of someone
+          # loading the wrong dependency by accident.
+          # However, lack of this entry,
+          # makes the github action log output have
+          # warnings regarding this, which makes
+          # debuging harder if someone does not know 
+          # it can be ignored. 
+          nix_path: nixpkgs=channel:nixos-unstable
 
       - name: "Checkout 'canon' branch of the repo"
         uses: actions/checkout@v4
         with:
           clean: true
+          fetch-depth: 0
+          fetch-tags: true
+          # This is important, we do not do merges
+          ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: "Build and run test images"
-        shell: bash
+      - name: "Lint, build and test the images"
         run: |2
-          $(nix-build --no-out-link default.nix -A images.test.all.run)
+          # Lint
+          alejandra --check .
+          statix check .
+          cog check --from-latest-tag
+          # Build
+          nix-build default.nix -A images --no-out-link
+          # Test
+          nix-build default.nix -A images.test.all.run -o result-test-all.sh
+          ./result-test-all.sh
+
