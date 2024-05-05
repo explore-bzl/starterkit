@@ -1,27 +1,29 @@
 # "glibc"-only containers
 
-Starterkit is a distro-agnostic, vertical slice of Linux FHS, trimmed down to provide only a functional "glibc". Effectively, it consists only of `/lib/{arch}-linux-gnu`.
+Starterkit is a distro-agnostic, vertical slice of [Linux FHS](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html), that contains solely a functional `glibc` and is purposefully lacking any other files stipulated by the standard.
 
 ## Why? What problem does this project solve?
-It is a pragmatic way of validating / ensuring that a certain executed binary is either: (1) delivered with its own dependencies (self-contained) or (2) relies solely on glibc and references it in a portable manner.
+It is a pragmatic way of ensuring that any binary run within said container, does not rely on any implicit dependencies (bar `glibc`) which are not provided by the binary itself. If the opposite is true, the execution simply fails, oftentimes pinpointing the dependency it was unable to make use of.
 
-In other words, Starterkit is an execution environment crafted specifically to only allow glibc as a pre-existing dependency that can be relied upon. Any other assumptions will break the execution, even if it refers to files / directories mentioned in Linux FHS or some specific Linux distro.
+The main goal is to address the issue of ensuring [hermeticy](https://bazel.build/basics/hermeticity) of Bazel Remote Builds, done with tools which do not care for said property and which are attempting to read myriad of filesystem files during its execution (chiefly legacy corporate tools). Using “starterkit” as execution platform for such binaries, allows to greatly reduce the pains of providing the minimal dependency tree, without having to use `strace` and/or reverse engineer the binary.
 
 ## Comparison against similar projects
-1. [Google distroless containers](https://github.com/GoogleContainerTools/distroless) - created images are connected to Debian distribution and contain the whole base filesystem hierarchy that the Starterkit specifically wants to prevent from being used. If you do not care about that aspect, this is the project you should use.
-2. [Alpine containers](https://github.com/alpinelinux/docker-alpine) - created images are using muslc - even with `glibc` compatibility lib, there is a risk of binaries written for `glibc` to misbehave. If you do not care about that risk, and you do not mind Linux FHS you should try it out.
+1. [Google distroless containers](https://github.com/GoogleContainerTools/distroless) - the images are tightly connected to Debian Linux distribution and contain the complete, expected FHS hierarchy of files. References to said files are something that `starterkit` specifically wants to prevent from taking place - if you do not care about this aspect, distroless is a project you should use.
+2. [Alpine containers](https://github.com/alpinelinux/docker-alpine) - in addition to aspect mentioned for distroless project (full FHS hierarchy in container), the crated images are using `muslc` instead of traditional `glibc`. Even though compatibility shims exist, this approach makes it less appealing for situations in which full-compatibility with legacy tools is needed (as sometimes an incompatibility error might appear). If you do not care about that risk and care about minimizing the container size, this project is the one you should use.
 
 ## Base operating system
 
-None. Starterkit is not based on any Linux distro and it obtains its `glibc` from [Yocto Uninative project](https://docs.yoctoproject.org/gatesgarth/ref-manual/ref-classes.html#uninative-bbclass). 
+None.
+
+Starterkit is not based upon any Linux distribution, and it obtains its `glibc` from the fantastic [Yocto Uninative project](https://docs.yoctoproject.org/gatesgarth/ref-manual/ref-classes.html#uninative-bbclass) which creates easily relocatable versions of the library.
 
 Currently used version of uninative: **4.4 (glibc 2.38)**.
 
 ## How to...
 
-### Use the container images?
+### Use the containers?
 
-The images are built using [nix](https://nixos.org/explore/) but they can be used by any [OCI Certified](https://opencontainers.org/community/certified/) runtime.
+Just like any other container image - simply pull it from the registry and run.
 
 ### Know what images are available?
 
@@ -46,69 +48,73 @@ The images are built using [nix](https://nixos.org/explore/) but they can be use
 | x86_64 | `harbor.apps.morrigna.rules-nix.build/explore-bzl/x86_64:wmpyjdacgj1zql8v6bj7xbvf2xqmpgby` |
 | x86_64-cc | `harbor.apps.morrigna.rules-nix.build/explore-bzl/x86_64-cc:dp8kyr1hd841h6va1a2w7pgrb497nibc` |
 
+### Build the containers?
+
+The images are built using [nix](https://nixos.org/explore/) but they can be used by any [OCI Certified](https://opencontainers.org/community/certified/) runtime. Nix is used solely at the build time and does not bleed into the images.
+
+```sh
+$ nix-build default.nix -A images.all
+```
+
+### Test the containers
+
+The images are validated by running (via [bubblewrap](https://github.com/containers/bubblewrap)) two simple applications within them. Both depend on the `glibc` and one of them is [`dateutils`](https://manpages.ubuntu.com/manpages/jammy/man1/dateutils.dateutils.1.html) imported from the Ubuntu apt packages (thus ensuring compatibility with applications build with global FHS usage in mind).
+
+```sh
+$ nix-build default.nix -A images.test.all.run -o result-test-all.sh
+$ ./result-test-all.sh
+```
+
+### Publish the containers?
+```
+$ nix-build default.nix -A images.all.push -o result-push-all.sh
+$ ./result-push-all.sh <docker-registry> <username> <password>
+```
+
 ### Use Starterkit as Bazel RBE platform?
 1. Define the platform as follows:
-```
-# exec_platforms/BUILD.bazel
-platform(
-    name = "starterkit",
-    constraint_values = [
-        "@platforms//os:linux",
-        "@platforms//cpu:x86_64",
-    ],
-    exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-x86_64-cc:pz7fjw1azrhsgdkldwq42w90vp85bxfh",
-    },
-)
-```
-
+    ```
+    # exec_platforms/BUILD.bazel
+    platform(
+        name = "starterkit",
+        constraint_values = [
+            "@platforms//os:linux",
+            "@platforms//cpu:x86_64",
+        ],
+        exec_properties = {
+            "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-x86_64-cc:pz7fjw1azrhsgdkldwq42w90vp85bxfh",
+        },
+    )
+    ```
 2. Prepare your .bazelrc for the RBE
-```
-# .bazelrc
-build:remote --remote_executor=grpcs://rbe.build.com
-build:remote --experimental_guard_against_concurrent_changes
-
-build:remote --strategy=remote
-build:remote --genrule_strategy=remote
-build:remote --spawn_strategy=remote
-
-build:remote --extra_execution_platforms=//exec_platforms:starterkit
-```
-
+    ```
+    # .bazelrc
+    build:remote --remote_executor=grpcs://rbe.build.com
+    build:remote --experimental_guard_against_concurrent_changes
+    
+    build:remote --strategy=remote
+    build:remote --genrule_strategy=remote
+    build:remote --spawn_strategy=remote
+    
+    build:remote --extra_execution_platforms=//exec_platforms:starterkit
+    ```
 3. Run the builds with `remote` config:
-```
-bazel build //battle:showdown --config=remote
-```
-
-### Build the images from scratch?
-
-```
-$ nix-build default.nix -A containerImages.starterKit-x86_64.image
-```
-
-### Publish the images?
-
-```
-$ $(nix-build --no-out-link default.nix -A containerImages.starterKit-i686.push) <docker-registry> <username> <password>
-```
+    ```
+    bazel build //battle:showdown --config=remote
+    ```
 
 ## Project origins
-One of the main appeals of Bazel and its Remote Build Execution, is that it can reduce the build times of large, heterogeneous build systems from hours to seconds. To fulfill that premise. Bazel actions have to be reproducible and hermetic [1]. The latter means that all of the entities involved in the build (source code, compilers but also compiler deps etc.) are isolated from the host system and the state of said host does affect the build. For all practical purposes, it means describing all dependencies in such a way that Bazel may place  them and use them from within its `execroot` [2] (which in turn, vastly improves composability). 
+One of the main appeals of Bazel and its Remote Build Execution, is that it can reduce the build times of large, heterogeneous build systems from hours to seconds. To fulfill that premise, Bazel actions have to be [reproducible and hermetic](https://bazel.build/basics/hermeticity). The latter means that all of the entities involved in the build (source code, compilers but also compiler dependencies etc.) are isolated from the host system and that the state of said host does not affect the build. From a practical standpoint, it means describing all Bazel build inputs in such a way that they are placed and used from within [`Bazel execroot`](https://bazel.buil/remote/output-directories).
 
-Said approach is not easy to achieve in practice - many tools, compilers, Bazel rules and even Bazel itself (sic!) [3] assume things to be present on the host machine that executes Bazel action and reach out of the `execroot` without second thought. While it is acceptable compromise, where given Bazel WORKSPACE builds only for a very limited amount of configurations (of target Architecture, OS, etc.), it very quickly becomes troublesome in setups that need to cross-compile for a myriad of target platforms, especially when intermediate code-generation steps are involved. 
+Said approach is not easy to achieve in practice - many tools, compilers, Bazel rules and even Bazel [itself](https://github.com/bazelbuild/bazel/blob/45dc2fc960216d1ee772f1a9c8d0c4d5524b76f4/tools/test/test-setup.sh
+) (sic!) often assume that certain files will be present on the host executing given Bazel action and are reaching out of the `execroot` without a second thought (which breaks the hermeticity).
 
-Simple example is a CPP project that has to be compiled for many architectures (aarch64, amd64, mipsel, ppce64 … and more)  - the choice is either to have dedicated worker machines with matching architecture or use cross-compilers. While using cross-compilers, one can use container images with globally installed packages (pinned-down per target architecture) or describe the toolchains so that they are all relocated under `execroot`. In all but last approaches, Bazel does not really govern compilation dependencies and they are managed external to the WORKSPACE, which invites a lot of places for the hermeticity to be broken.  
+For a Bazel project that consists of a very limited amount of configurations (target / execution CPU architectures, OSes, big libraries used etc.) aforementioned approach might be an acceptable compromise, where bits of theoretical hermeticity are traded in for expediency in delivery. However, for a project of more significant size, it  will very quickly become troublesome and cause an explosion of out-of-bazel dependencies that need to be tracked and taken care of.
 
-This project is the result of suffering through making aforementioned toolchains, dependencies and tools to be relocatable under `execroot` and having their dependencies fully described so that the Bazel RBE may easily compose an action environment for all iof its needs and use minimal container images. 
+**Example**: For a CPP project that has to be compiled for many architectures (aarch64, amd64, mipsel, ppce64 … and more), following choices are available: (1) to have dedicated worker machines with matching architecture; (2) to use cross-compilers that are pre-installed on the hosts available for Bazel actions; (3) to use cross-compilers that are able to be used from the Bazel `execroot`. In all but that last approach, Bazel does not really govern the compilation dependencies, which makes it more difficult to compose them together and introduces a lot of additional bookkeeping that has to take place outside of the Bazel dependency graph.
 
-As it is not always practical or possible, to trace all dependencies of a given tool/compiler/Bazel rule/etc. upfront, Starterkit makes it dead simple to validate if a build is truly not depending on anything else but the bare `glibc` - by the means of stripping everything else. This approach both provides a minimal execution environment for Bazel RBE and does ensure, that nothing besides glibc is used. 
+This project is the result of suffering through process of making aforementioned toolchains, compilers, cross-compilers and more, relocatable under `execroot` and having their dependencies fully described so that the Bazel RBE may easily compose an action environment for all of its needs.
 
-The cut-off point has been chosen for the `glibc` level, as in the author's experience, there is a significant amount of binaries that will need a non-trivial amount of work to be used without it. Therefore it is a compromise between attempt to make Bazel builds truly hermetic and the limitations of prevalent applications. 
+As it is not always practical or possible, to trace all dependencies of a given tool/compiler/Bazel rule/etc. upfront, starterkit makes it dead simple to ensure that a build is truly not depending on anything else but the bare `glibc` - by the means of stripping everything else. Said approach provides both a minimal execution environment for Bazel RBE and does ensure that nothing besides `glibc` is used.
 
----
-
-[1] Hermeticity described in Bazel docs: https://bazel.build/basics/hermeticity 
-
-[2] What is Bazel execroot: https://bazel.buil/remote/output-directories 
-
-[3] Example of Bazel own non-hermetic assumptions: https://github.com/bazelbuild/bazel/blob/45dc2fc960216d1ee772f1a9c8d0c4d5524b76f4/tools/test/test-setup.sh 
+The cut-off point has been chosen at the `glibc` level, as in the authors experience, there is a significant amount of binaries that will need a non-trivial amount of work to be used without it. Therefore it is a compromise between attempts to make Bazel builds truly hermetic and the limitations of prevalent applications.
