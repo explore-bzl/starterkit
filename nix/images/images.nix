@@ -9,7 +9,17 @@
   buildPushContainerScript,
   mkBwrapEnv,
 }: let
-  inherit (lib) optional optionals optionalString concatMapStringsSep removeSuffix;
+  inherit
+    (lib)
+    any
+    filter
+    hasSuffix
+    optional
+    optionals
+    optionalString
+    concatMapStringsSep
+    removeSuffix
+    ;
 
   genImageConfig = {
     name,
@@ -69,8 +79,25 @@
     ];
     description = join " " [
       "Barebone container image"
-      (optionalString includeShell "with a minimal shell (busybox sh)")
-      (optionalString (archs != []) "providing glibc support for ${join " " archs} architecture(s)")
+      (
+        optionalString
+        includeShell
+        "with busybox sh"
+      )
+      (
+        optionalString
+        (archs != [])
+        "providing glibc for ${
+          join ", " (map (removeSuffix "-cc") archs)
+        }"
+      )
+      (
+        optionalString
+        (any (hasSuffix "-cc") archs)
+        "and libstdcxx for ${
+          join ", " (map (removeSuffix "-cc") (filter (hasSuffix "-cc") archs))
+        }"
+      )
     ];
   };
 in

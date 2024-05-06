@@ -10,12 +10,13 @@ with builtins; let
   });
   registryUrl = "harbor.apps.morrigna.rules-nix.build/explore-bzl";
   markdownTableWithContainers = concatStringsSep "\n" (
-    ["| Image | Pull |"]
-    ++ ["| ---   | ---  |"]
+    ["| Image | Description | Pull |"]
+    ++ ["| --- | ---  | --- |"]
     ++ (map (name: let
-      tag = images.${name}.image.out.imageTag;
-      pullCommand = "${registryUrl}/${name}:${tag}";
-    in "| ${name} | `${pullCommand}` |")
+      image = images.${name}.image.out;
+      pullCommand = "${registryUrl}/${name}:${image.imageTag}";
+      description = (fromJSON image.baseJson.text).config.Labels."org.opencontainers.image.description";
+    in "| ${name} | ${description} | `${pullCommand}` |")
     (attrNames (filterContainerImages "image" images)))
   );
   templated =
