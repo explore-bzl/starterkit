@@ -5,6 +5,7 @@
   buildPushContainerScript,
   mkBwrapEnv,
   ubuntuDateutils,
+  justbuild,
   buildPackages,
 }: let
   buildStarterKitTest = {
@@ -24,13 +25,6 @@
     bwrap = mkBwrapEnv image;
   };
 
-  genMetadata = variant: {
-    name = "ash-${variant.arch}";
-    testImage = containerImages."ash-${variant.arch}".image;
-    testBinary = helloWorldGlibc."${(builtins.replaceStrings ["-cc"] [""] variant.arch)}";
-    cmd = ["/bin/hello_cpp"];
-  };
-
   ubuntuVariant = {
     "ash-x86_64-cc-ubuntu" = buildStarterKitTest {
       name = "starterkit-x86_64-cc-testUbuntuDateutils";
@@ -41,7 +35,26 @@
   };
 in
   buildPackages {
-    metaFun = genMetadata;
+    metaFun = variant: {
+      name = "ash-${variant.arch}-hello";
+      testImage = containerImages."ash-${variant.arch}".image;
+      testBinary = helloWorldGlibc."${(builtins.replaceStrings ["-cc"] [""] variant.arch)}";
+      cmd = ["/bin/hello_cpp"];
+    };
+    buildFun = buildStarterKitTest;
+    variants = {
+      attrs = {
+        arch = ["i686-cc" "x86_64-cc"];
+      };
+    };
+  }
+  // buildPackages {
+    metaFun = variant: {
+      name = "ash-${variant.arch}-just";
+      testImage = containerImages."ash-${variant.arch}".image;
+      testBinary = justbuild;
+      cmd = ["/bin/just" "--help"];
+    };
     buildFun = buildStarterKitTest;
     variants = {
       attrs = {

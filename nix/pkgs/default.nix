@@ -3,4 +3,5 @@
   uninative = callPackage ./uninative {};
   helloWorldGlibc = callPackage ./hello {};
   ubuntuDateutils = callPackage ./dateutils {};
+  justbuild = callPackage ./justbuild {};
 }
