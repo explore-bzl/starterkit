@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.3.0](https://github.com/explore-bzl/starterkit/compare/3895c0e8690314663fab23d69cc687c569abe2c7..v0.3.0) - 2024-05-15
+#### Documentation
+- rewrite readme to be more clear - ([3895c0e](https://github.com/explore-bzl/starterkit/commit/3895c0e8690314663fab23d69cc687c569abe2c7)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+#### Features
+- **(test)** adds justbuild test images - ([c46226e](https://github.com/explore-bzl/starterkit/commit/c46226edb57e975c9c865af21cda83a09042331e)) - Artur Stachecki
+#### Miscellaneous Chores
+- **(docs)** add description to the generated table - ([f3bbe8c](https://github.com/explore-bzl/starterkit/commit/f3bbe8c9c9752fba8929b31e6f7495a6efd139d8)) - Artur Stachecki
+- specify MIT license for the project - ([f448fb2](https://github.com/explore-bzl/starterkit/commit/f448fb251d4eb69b17b107437d6edada0327fad0)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.2.0](https://github.com/explore-bzl/starterkit/compare/7708120866140595a5d4172c4b4e084ab520389b..v0.2.0) - 2024-05-03
 #### Bug Fixes
 - **(cicd)** github actions lack of permissions and wrong triggers - ([815efc8](https://github.com/explore-bzl/starterkit/commit/815efc8cfcf4f760ef28e3e49a6d51f774522b9d)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
