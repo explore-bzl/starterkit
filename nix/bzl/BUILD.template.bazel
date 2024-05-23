@@ -1,0 +1,24 @@
+""" Starterkit flavors in form of Bazel execution platforms. """
+
+package(default_visibility = ["//visibility:public"])
+
+# Anything falling in this category should not execute
+platform(name = "DEV_NULL_PLATFORM")
+
+platform(
+    name = "starterkit-x86_64-linux",
+    constraint_values = [
+        "@platforms//os:linux",
+        "@platforms//cpu:x86_64",
+    ],
+    exec_properties = {
+        "OSFamily": "Linux",
+    },
+)
+
+# Please be aware,
+# that you should select only ONE
+# of the following platforms to be registered,
+# or add more specific constraints.
+<!-- INSERT PLATFORMS -->
+

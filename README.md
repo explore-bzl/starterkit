@@ -72,18 +72,15 @@ $ ./result-push-all.sh <docker-registry> <username> <password>
 ```
 
 ### Use Starterkit as Bazel RBE platform?
-1. Define the platform as follows:
+1. Add the `starterkit` repository to the project WORKSPACE:
     ```
-    # exec_platforms/BUILD.bazel
-    platform(
+    load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+    http_archive(
         name = "starterkit",
-        constraint_values = [
-            "@platforms//os:linux",
-            "@platforms//cpu:x86_64",
-        ],
-        exec_properties = {
-            "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-x86_64-cc:kfa1xbpi2j8yki68na8s6lqgx6h2n1bw",
-        },
+        integrity = "",
+        strip_prefix = "starterkit-<version>",
+        url = "https://github.com/explore-bzl/starterkit/releases/tag/v<version>.tar.gz",
     )
     ```
 2. Prepare your .bazelrc for the RBE
@@ -96,7 +93,7 @@ $ ./result-push-all.sh <docker-registry> <username> <password>
     build:remote --genrule_strategy=remote
     build:remote --spawn_strategy=remote
     
-    build:remote --extra_execution_platforms=//exec_platforms:starterkit
+    build:remote --extra_execution_platforms=@starterkit//:<name-of-selected-image>
     ```
 3. Run the builds with `remote` config:
     ```
