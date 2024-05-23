@@ -21,7 +21,10 @@ pre_bump_hooks = [
   "./result-test-all.sh",
   # Readme update
   "nix-build default.nix -A docs.readme -o result-readme",
-  "cp result-readme ./README.md",
+  "cp -f result-readme ./README.md",
+  # BUILD.bazel update
+  "nix-build default.nix -A bzl.buildfile -o result-build-bazel",
+  "cp -f result-build-bazel ./BUILD.bazel",
 ]
 post_bump_hooks = []
 

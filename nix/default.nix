@@ -10,6 +10,9 @@ in rec {
   images =
     (mkCallPackage (skitLib // pkgs))
     ./images {};
+  bzl =
+    (mkCallPackage (skitLib // {inherit images;}))
+    ./bzl {};
   docs =
     (mkCallPackage (skitLib // {inherit images;}))
     ./docs {};
