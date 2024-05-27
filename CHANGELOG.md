@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.4.0](https://github.com/explore-bzl/starterkit/compare/e57bdb770bdf87714a04841ac90ff3ff6793b07f..v0.4.0) - 2024-05-27
+#### Features
+- create Bazel platform definitions - ([e57bdb7](https://github.com/explore-bzl/starterkit/commit/e57bdb770bdf87714a04841ac90ff3ff6793b07f)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.3.0](https://github.com/explore-bzl/starterkit/compare/3895c0e8690314663fab23d69cc687c569abe2c7..v0.3.0) - 2024-05-15
 #### Documentation
 - rewrite readme to be more clear - ([3895c0e](https://github.com/explore-bzl/starterkit/commit/3895c0e8690314663fab23d69cc687c569abe2c7)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
