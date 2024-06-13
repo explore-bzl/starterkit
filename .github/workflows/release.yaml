@@ -4,10 +4,11 @@ run-name: "Release from commit ${{ github.sha }}"
 on:
   push:
     branches: ["canon"]
-    # If only changelog and README were modified, it means that was the release
+    # If only BUILD, CHANGELOG and README were modified, it means that was the release
     # Sane implementation would require creating steps specifically to extract tags
     # (something that is not needed atm).
     paths-ignore:
+      - "BUILD.bazel"
       - "CHANGELOG.md"
       - "README.md"
 # Author soapbox:
