@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.5.0](https://github.com/explore-bzl/starterkit/compare/13ed05a11252593d5ad0f48818af3bc60f1a3ce6..v0.5.0) - 2024-06-13
+#### Features
+- **(update)** update the nixpkgs to latest as of 2024-06-13 - ([13ed05a](https://github.com/explore-bzl/starterkit/commit/13ed05a11252593d5ad0f48818af3bc60f1a3ce6)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.4.0](https://github.com/explore-bzl/starterkit/compare/e57bdb770bdf87714a04841ac90ff3ff6793b07f..v0.4.0) - 2024-05-27
 #### Features
 - create Bazel platform definitions - ([e57bdb7](https://github.com/explore-bzl/starterkit/commit/e57bdb770bdf87714a04841ac90ff3ff6793b07f)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
