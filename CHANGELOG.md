@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.5.1](https://github.com/explore-bzl/starterkit/compare/c52587ef06d334b236b81691846e4d64c8bdc446..v0.5.1) - 2024-06-13
+#### Bug Fixes
+- **(ci)** do not trigger release process if only BUILD.bazel has changed - ([c52587e](https://github.com/explore-bzl/starterkit/commit/c52587ef06d334b236b81691846e4d64c8bdc446)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.5.0](https://github.com/explore-bzl/starterkit/compare/13ed05a11252593d5ad0f48818af3bc60f1a3ce6..v0.5.0) - 2024-06-13
 #### Features
 - **(update)** update the nixpkgs to latest as of 2024-06-13 - ([13ed05a](https://github.com/explore-bzl/starterkit/commit/13ed05a11252593d5ad0f48818af3bc60f1a3ce6)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
