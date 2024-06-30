@@ -1,5 +1,6 @@
 {
   busyboxStatic,
+  pkgsStatic,
   dockerTools,
   glibc,
   lib,
@@ -40,11 +41,12 @@
   buildStarterKit = {
     name,
     includeShell,
+    includeStrace,
     archs,
     description,
   }: let
     config = genImageConfig {inherit name includeShell description;};
-    copyToRoot = optionals includeShell [busyboxStatic] ++ map (arch: uninative.${arch}) archs;
+    copyToRoot = optionals includeShell [busyboxStatic] ++ optionals includeStrace [pkgsStatic.strace] ++ map (arch: uninative.${arch}) archs;
     ldSetupCommands = concatMapStringsSep "\n" (arch: ''
       echo /lib/${arch}-linux-gnu >> etc/ld.so.conf
       echo /usr/lib/${arch}-linux-gnu >> etc/ld.so.conf
@@ -72,9 +74,10 @@
     );
 
   genMetadata = variant: rec {
-    inherit (variant) includeShell archs;
+    inherit (variant) includeShell includeStrace archs;
     name = join "-" [
       (optionalString includeShell "ash")
+      (optionalString includeStrace "strace")
       (optionalString (archs != []) (join "-" archs))
     ];
     description = join " " [
@@ -83,6 +86,11 @@
         optionalString
         includeShell
         "with busybox sh"
+      )
+      (
+        optionalString
+        includeStrace
+        "with strace"
       )
       (
         optionalString
@@ -105,9 +113,10 @@ in
     metaFun = genMetadata;
     buildFun = buildStarterKit;
     variants = {
-      filter = variant: variant.includeShell || variant.archs != [];
+      filter = variant: variant.includeShell || variant.includeStrace || variant.archs != [];
       attrs = {
         includeShell = [false true];
+        includeStrace = [false true];
         archs = [
           []
           ["i686"]
