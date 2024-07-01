@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.0](https://github.com/explore-bzl/starterkit/compare/bcd66505b628a6300955202dfcb651f58887c5a2..v0.6.0) - 2024-07-01
+#### Documentation
+- update readme with additional example of similar project - ([bcd6650](https://github.com/explore-bzl/starterkit/commit/bcd66505b628a6300955202dfcb651f58887c5a2)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+#### Features
+- new image variant containing strace - ([a578767](https://github.com/explore-bzl/starterkit/commit/a5787676d4916c50bcdcb9f1195fd77dd8492a1d)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+#### Miscellaneous Chores
+- **(update)** update the nixpkgs to latest as of 2024-06-30 - ([9674a31](https://github.com/explore-bzl/starterkit/commit/9674a31c431f39651271091242fd3bdb0049bfbd)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.5.1](https://github.com/explore-bzl/starterkit/compare/c52587ef06d334b236b81691846e4d64c8bdc446..v0.5.1) - 2024-06-13
 #### Bug Fixes
 - **(ci)** do not trigger release process if only BUILD.bazel has changed - ([c52587e](https://github.com/explore-bzl/starterkit/commit/c52587ef06d334b236b81691846e4d64c8bdc446)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
