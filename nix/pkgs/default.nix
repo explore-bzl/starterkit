@@ -1,5 +1,6 @@
 {callPackage}: {
   busyboxStatic = callPackage ./busybox {};
+  straceStatic = callPackage ./strace {};
   uninative = callPackage ./uninative {};
   helloWorldGlibc = callPackage ./hello {};
   ubuntuDateutils = callPackage ./dateutils {};
