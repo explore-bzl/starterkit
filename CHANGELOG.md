@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.6.1](https://github.com/explore-bzl/starterkit/compare/6207a8e547a33aa1d1dec841b5451784105815e6..v0.6.1) - 2024-07-12
+#### Bug Fixes
+- strace images contain /nix/store - ([6207a8e](https://github.com/explore-bzl/starterkit/commit/6207a8e547a33aa1d1dec841b5451784105815e6)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.6.0](https://github.com/explore-bzl/starterkit/compare/bcd66505b628a6300955202dfcb651f58887c5a2..v0.6.0) - 2024-07-01
 #### Documentation
 - update readme with additional example of similar project - ([bcd6650](https://github.com/explore-bzl/starterkit/commit/bcd66505b628a6300955202dfcb651f58887c5a2)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
