@@ -1,6 +1,6 @@
 {
   busyboxStatic,
-  pkgsStatic,
+  straceStatic,
   dockerTools,
   glibc,
   lib,
@@ -46,7 +46,7 @@
     description,
   }: let
     config = genImageConfig {inherit name includeShell description;};
-    copyToRoot = optionals includeShell [busyboxStatic] ++ optionals includeStrace [pkgsStatic.strace] ++ map (arch: uninative.${arch}) archs;
+    copyToRoot = optionals includeShell [busyboxStatic] ++ optionals includeStrace [straceStatic] ++ map (arch: uninative.${arch}) archs;
     ldSetupCommands = concatMapStringsSep "\n" (arch: ''
       echo /lib/${arch}-linux-gnu >> etc/ld.so.conf
       echo /usr/lib/${arch}-linux-gnu >> etc/ld.so.conf
