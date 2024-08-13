@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.7.0](https://github.com/explore-bzl/starterkit/compare/004db8ffb55d45c3a67b6b19d27771f3f4da260a..v0.7.0) - 2024-08-13
+#### Features
+- new image variant containing coreutils - ([004db8f](https://github.com/explore-bzl/starterkit/commit/004db8ffb55d45c3a67b6b19d27771f3f4da260a)) - Artur Stachecki
+
+- - -
+
 ## [v0.6.1](https://github.com/explore-bzl/starterkit/compare/6207a8e547a33aa1d1dec841b5451784105815e6..v0.6.1) - 2024-07-12
 #### Bug Fixes
 - strace images contain /nix/store - ([6207a8e](https://github.com/explore-bzl/starterkit/commit/6207a8e547a33aa1d1dec841b5451784105815e6)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
