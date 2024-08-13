@@ -42,11 +42,16 @@
     name,
     includeShell,
     includeStrace,
+    includeCoreutils,
     archs,
     description,
   }: let
     config = genImageConfig {inherit name includeShell description;};
-    copyToRoot = optionals includeShell [busyboxStatic] ++ optionals includeStrace [straceStatic] ++ map (arch: uninative.${arch}) archs;
+    copyToRoot =
+      optionals includeShell [busyboxStatic.minimal]
+      ++ optionals includeCoreutils [busyboxStatic.coreutils]
+      ++ optionals includeStrace [straceStatic]
+      ++ map (arch: uninative.${arch}) archs;
     ldSetupCommands = concatMapStringsSep "\n" (arch: ''
       echo /lib/${arch}-linux-gnu >> etc/ld.so.conf
       echo /usr/lib/${arch}-linux-gnu >> etc/ld.so.conf
@@ -74,10 +79,11 @@
     );
 
   genMetadata = variant: rec {
-    inherit (variant) includeShell includeStrace archs;
+    inherit (variant) includeShell includeStrace includeCoreutils archs;
     name = join "-" [
       (optionalString includeShell "ash")
       (optionalString includeStrace "strace")
+      (optionalString includeCoreutils "coreutils")
       (optionalString (archs != []) (join "-" archs))
     ];
     description = join " " [
@@ -91,6 +97,11 @@
         optionalString
         includeStrace
         "with strace"
+      )
+      (
+        optionalString
+        includeCoreutils
+        "with coreutils"
       )
       (
         optionalString
@@ -113,10 +124,15 @@ in
     metaFun = genMetadata;
     buildFun = buildStarterKit;
     variants = {
-      filter = variant: variant.includeShell || variant.includeStrace || variant.archs != [];
+      filter = variant:
+        variant.includeShell
+        || variant.includeStrace
+        || variant.includeCoreutils
+        || variant.archs != [];
       attrs = {
-        includeShell = [false true];
         includeStrace = [false true];
+        includeShell = [false true];
+        includeCoreutils = [false true];
         archs = [
           []
           ["i686"]
