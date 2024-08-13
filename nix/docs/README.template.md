@@ -18,7 +18,7 @@ None.
 
 Starterkit is not based upon any Linux distribution, and it obtains its `glibc` from the fantastic [Yocto Uninative project](https://docs.yoctoproject.org/gatesgarth/ref-manual/ref-classes.html#uninative-bbclass) which creates easily relocatable versions of the library.
 
-Currently used version of uninative: **4.4 (glibc 2.38)**.
+Currently used version of uninative: **4.6 (glibc 2.40)**.
 
 ## How to...
 
