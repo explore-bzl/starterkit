@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.8.0](https://github.com/explore-bzl/starterkit/compare/af0d9757f30cdc6a7fb9c840f2134808a89eb666..v0.8.0) - 2024-08-14
+#### Features
+- **(update)** update the nixpkgs to latest as of 2024-08-13 - ([af0d975](https://github.com/explore-bzl/starterkit/commit/af0d9757f30cdc6a7fb9c840f2134808a89eb666)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+- update to uninative 4.6 - ([00dd522](https://github.com/explore-bzl/starterkit/commit/00dd52227a7119ebea422183f49dc61d17eed384)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.7.0](https://github.com/explore-bzl/starterkit/compare/004db8ffb55d45c3a67b6b19d27771f3f4da260a..v0.7.0) - 2024-08-13
 #### Features
 - new image variant containing coreutils - ([004db8f](https://github.com/explore-bzl/starterkit/commit/004db8ffb55d45c3a67b6b19d27771f3f4da260a)) - Artur Stachecki
