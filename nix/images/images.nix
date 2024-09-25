@@ -1,4 +1,5 @@
 {
+  bashStatic,
   busyboxStatic,
   straceStatic,
   dockerTools,
@@ -24,11 +25,17 @@
 
   genImageConfig = {
     name,
-    includeShell,
+    includeAsh,
+    includeBash,
     description,
   }: {
-    Cmd = optional includeShell "/bin/sh";
-    Env = optional includeShell "PATH=/bin";
+    Cmd =
+      if includeAsh
+      then "/bin/sh"
+      else if includeBash
+      then "/bin/bash"
+      else "";
+    Env = optional (includeAsh || includeBash) "PATH=/bin";
     Labels = {
       "org.opencontainers.image.authors" = "r2r-dev,AleksanderGondek";
       "org.opencontainers.image.url" = "https://github.com/explore-bzl/starterkit";
@@ -40,15 +47,17 @@
 
   buildStarterKit = {
     name,
-    includeShell,
+    includeAsh,
+    includeBash,
     includeStrace,
     includeCoreutils,
     archs,
     description,
   }: let
-    config = genImageConfig {inherit name includeShell description;};
+    config = genImageConfig {inherit name includeAsh includeBash description;};
     copyToRoot =
-      optionals includeShell [busyboxStatic.minimal]
+      optionals includeAsh [busyboxStatic.minimal]
+      ++ optionals includeBash [bashStatic]
       ++ optionals includeCoreutils [busyboxStatic.coreutils]
       ++ optionals includeStrace [straceStatic]
       ++ map (arch: uninative.${arch}) archs;
@@ -73,15 +82,16 @@
       push = buildPushContainerScript image;
     }
     // (
-      if includeShell
+      if includeAsh
       then {bwrap = mkBwrapEnv image;}
       else {}
     );
 
   genMetadata = variant: rec {
-    inherit (variant) includeShell includeStrace includeCoreutils archs;
+    inherit (variant) includeAsh includeBash includeStrace includeCoreutils archs;
     name = join "-" [
-      (optionalString includeShell "ash")
+      (optionalString includeAsh "ash")
+      (optionalString includeBash "bash")
       (optionalString includeStrace "strace")
       (optionalString includeCoreutils "coreutils")
       (optionalString (archs != []) (join "-" archs))
@@ -90,8 +100,13 @@
       "Barebone container image"
       (
         optionalString
-        includeShell
+        includeAsh
         "with busybox sh"
+      )
+      (
+        optionalString
+        includeBash
+        "with static bash"
       )
       (
         optionalString
@@ -125,13 +140,15 @@ in
     buildFun = buildStarterKit;
     variants = {
       filter = variant:
-        variant.includeShell
+        variant.includeAsh
+        || variant.includeBash
         || variant.includeStrace
         || variant.includeCoreutils
         || variant.archs != [];
       attrs = {
         includeStrace = [false true];
-        includeShell = [false true];
+        includeAsh = [false true];
+        includeBash = [false true];
         includeCoreutils = [false true];
         archs = [
           []
