@@ -10,14 +10,14 @@ with builtins; let
   });
   registryUrl = "harbor.apps.morrigna.rules-nix.build/explore-bzl";
   markdownTableWithContainers = concatStringsSep "\n" (
-    ["| Image | Description | Pull |"]
-    ++ ["| --- | ---  | --- |"]
+    ["<markdown-accessiblity-table><table><thead><tr><th>Image</th><th>Description</th><th>Pull</th></tr></thread><tbody>"]
     ++ (map (name: let
       image = images.${name}.image.out;
       pullCommand = "${registryUrl}/${name}:${image.imageTag}";
       description = (fromJSON image.baseJson.text).config.Labels."org.opencontainers.image.description";
-    in "| ${name} | ${description} | `${pullCommand}` |")
+    in "<tr><td>${name}</td><td>${description}</td><td>`${pullCommand}`</td></tr>")
     (attrNames (filterContainerImages "image" images)))
+    ++ ["</tbody></table></markdown-accessiblity-table>"]
   );
   templated =
     replaceStrings
