@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.9.0](https://github.com/explore-bzl/starterkit/compare/c6eaafc449f0e0b638dc0225bfb1149be9d1e1d5..v0.9.0) - 2024-09-26
+#### Documentation
+- make the list of available images collapsable - ([51cc07b](https://github.com/explore-bzl/starterkit/commit/51cc07bed7172ef783a2fdcb4b83f073625a3834)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+#### Features
+- **(update)** update the nixpkgs to latest as of 2024-09-25 - ([c6eaafc](https://github.com/explore-bzl/starterkit/commit/c6eaafc449f0e0b638dc0225bfb1149be9d1e1d5)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+- introduce image variant with bash - ([4ee4211](https://github.com/explore-bzl/starterkit/commit/4ee42111f4f54e98e6e91aaa75be45b2c6d079a9)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.8.0](https://github.com/explore-bzl/starterkit/compare/af0d9757f30cdc6a7fb9c840f2134808a89eb666..v0.8.0) - 2024-08-14
 #### Features
 - **(update)** update the nixpkgs to latest as of 2024-08-13 - ([af0d975](https://github.com/explore-bzl/starterkit/commit/af0d9757f30cdc6a7fb9c840f2134808a89eb666)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
