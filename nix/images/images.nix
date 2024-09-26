@@ -31,10 +31,10 @@
   }: {
     Cmd =
       if includeAsh
-      then "/bin/sh"
+      then ["/bin/sh"]
       else if includeBash
-      then "/bin/bash"
-      else "";
+      then ["/bin/bash"]
+      else [""];
     Env = optional (includeAsh || includeBash) "PATH=/bin";
     Labels = {
       "org.opencontainers.image.authors" = "r2r-dev,AleksanderGondek";
