@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.9.1](https://github.com/explore-bzl/starterkit/compare/0c1c0d68ca3821827c75e5ca0b4bb5176ee7e63c..v0.9.1) - 2024-09-26
+#### Bug Fixes
+- images config entry cmd - ([0c1c0d6](https://github.com/explore-bzl/starterkit/commit/0c1c0d68ca3821827c75e5ca0b4bb5176ee7e63c)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.9.0](https://github.com/explore-bzl/starterkit/compare/c6eaafc449f0e0b638dc0225bfb1149be9d1e1d5..v0.9.0) - 2024-09-26
 #### Documentation
 - make the list of available images collapsable - ([51cc07b](https://github.com/explore-bzl/starterkit/commit/51cc07bed7172ef783a2fdcb4b83f073625a3834)) - [@AleksanderGondek](https://github.com/AleksanderGondek)

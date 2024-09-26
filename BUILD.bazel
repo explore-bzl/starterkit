@@ -25,7 +25,7 @@ platform(
     name = "ash",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash:frw2q28hzq4npaawgpsrbcivmj6bz7ql",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash:5mfaxwh59bw9g7747j33v4psf2g604vl",
     },
 )
 
@@ -33,7 +33,7 @@ platform(
     name = "ash-bash",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash:g5bxv084ripkp5s9739mgz2yjqz1gr33",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash:rp363if620mv24p7pb8w05d9dvcj388r",
     },
 )
 
@@ -41,7 +41,7 @@ platform(
     name = "ash-bash-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils:722li1p4169dma1401ryk1ydgz23r7jq",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils:agiis24gmpa353nbizs5mjvvbnakvl1h",
     },
 )
 
@@ -49,7 +49,7 @@ platform(
     name = "ash-bash-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686:qzmhc64pm3fwbv2hzcpm39bkvzx7ksf0",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686:sjvm402n6m19jmplx545b29inhjdcys5",
     },
 )
 
@@ -57,7 +57,7 @@ platform(
     name = "ash-bash-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-cc:7i4qvs5ycmaybpqzyrnskknx57gz6ysk",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-cc:ii7kpr614agid2mbmx4dlynx8cc8p2cq",
     },
 )
 
@@ -65,7 +65,7 @@ platform(
     name = "ash-bash-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-cc-x86_64:kw2pnfbclx1fpyrv6vavm3xb5adc1rha",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-cc-x86_64:k66nllm2d8ggx4ny4an8lrc8wx26wyqy",
     },
 )
 
@@ -73,7 +73,7 @@ platform(
     name = "ash-bash-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-cc-x86_64-cc:zcyjx1pps86bqpgrfiw3z77wgrxrn8ah",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-cc-x86_64-cc:myl0xwv1z442sc5ci982qny9lb0c0giv",
     },
 )
 
@@ -81,7 +81,7 @@ platform(
     name = "ash-bash-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-x86_64:mhfmyn38yyz70a499rnqqdb9jck6apmc",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-x86_64:9cqgaw0pdm7fl0kla1svaxlkjl9014n0",
     },
 )
 
@@ -89,7 +89,7 @@ platform(
     name = "ash-bash-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-x86_64-cc:3nwg9fpfgbhdb40rvh53hi2l337zkwgd",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-i686-x86_64-cc:lmgjn8d588rgs35f57h2dcxfdc6gda67",
     },
 )
 
@@ -97,7 +97,7 @@ platform(
     name = "ash-bash-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-x86_64:c3c5kklhcxx5rv355ck21wlhh2kyckan",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-x86_64:a616qd783kmbhi4jgsnjab36zxigb2zf",
     },
 )
 
@@ -105,7 +105,7 @@ platform(
     name = "ash-bash-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-x86_64-cc:7r2jyhlfd042x5p7dx45nm4y8dwjp5f7",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-coreutils-x86_64-cc:pbjzzshl1qy0xhaq0319s8jrq9wp42cp",
     },
 )
 
@@ -113,7 +113,7 @@ platform(
     name = "ash-bash-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686:y63y14hq61z1s3hinimjgk07v5zp5n9s",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686:jf5cnqdi1a3k3akivaxj920kj8xj4rc0",
     },
 )
 
@@ -121,7 +121,7 @@ platform(
     name = "ash-bash-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-cc:5carx8dmllw3wdfa1a34wpxw8aby6sfz",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-cc:ws7rx0fsmnb190if034c387hsynphl3k",
     },
 )
 
@@ -129,7 +129,7 @@ platform(
     name = "ash-bash-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-cc-x86_64:zp9jr0cikqcmgf0ka1y447x3gk1cb08y",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-cc-x86_64:hff8vxjjb2k4m3iwbk1j040rmbnfk65g",
     },
 )
 
@@ -137,7 +137,7 @@ platform(
     name = "ash-bash-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-cc-x86_64-cc:xbp825ayffjn8xpwhxvm72v8y8fqb474",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-cc-x86_64-cc:3njs2qp88dnr852lgy20hcz9sg7yw4r3",
     },
 )
 
@@ -145,7 +145,7 @@ platform(
     name = "ash-bash-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-x86_64:m6qkc9mv6js4gxx12894d0r64r03b1nq",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-x86_64:49cv4pdlsfhaqc5f9x0w76cj2p7iwxa2",
     },
 )
 
@@ -153,7 +153,7 @@ platform(
     name = "ash-bash-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-x86_64-cc:c81ybpibkkhfwzgvvy60wwwdrk61ifrc",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-i686-x86_64-cc:wig5l608yvl9iqxclp9l744w4cf41jii",
     },
 )
 
@@ -161,7 +161,7 @@ platform(
     name = "ash-bash-strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace:9g4k7pwla4m8vks2sik7xa3dawqgkp1n",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace:927w6f6x3xdhbsi8z36sp89gav9kl801",
     },
 )
 
@@ -169,7 +169,7 @@ platform(
     name = "ash-bash-strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils:6s8i0j2dmpayyagbb7m6ca26km4ja9qz",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils:qgp20j25g8zx6m7zw2zgd4vwfwxsaswb",
     },
 )
 
@@ -177,7 +177,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686:rahi0mcxr09i7w8cv1y389m3d1h4awzx",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686:fa4dw1vqngdjpc2cf6pj7mq54jddlkki",
     },
 )
 
@@ -185,7 +185,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-cc:vvmmq8c90s7p1c9synklfs57kasgd6xj",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-cc:k2akdvm8yy3ldmh3cw3wcfarjbcfm8qb",
     },
 )
 
@@ -193,7 +193,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-cc-x86_64:8ymggx458i0g0n9s3dga2bdw8spwmp6s",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-cc-x86_64:5gn3svs868a3pma67j5p0wkjm6v7rlk7",
     },
 )
 
@@ -201,7 +201,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-cc-x86_64-cc:15aj8c1ygbz27q6w6khf0nlxs3priwiz",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-cc-x86_64-cc:9kw8ghx6xn3bcki482ba0syxdci39dxn",
     },
 )
 
@@ -209,7 +209,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-x86_64:ll6v4iw3p0qlvcgfl6yq6mpq281gw7sl",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-x86_64:mprvhkfg2336rby40bmill757kn976ia",
     },
 )
 
@@ -217,7 +217,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-x86_64-cc:b9m92n81mm0m8ac0yd9bwqhbah8mcyx1",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-i686-x86_64-cc:qwyccs8srxaxvha8ibl4zghalsbymh43",
     },
 )
 
@@ -225,7 +225,7 @@ platform(
     name = "ash-bash-strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-x86_64:9q1w2ymw9px6y47q5q81l0a5zpp6b9p4",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-x86_64:x0v2dc4riy013ysm1fa28c3p4bpidd5q",
     },
 )
 
@@ -233,7 +233,7 @@ platform(
     name = "ash-bash-strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-x86_64-cc:5rsps4wx87kcdg7x4dqm05hjb5h7vhqa",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-coreutils-x86_64-cc:34pzasim3yinhx9dvy6nqys9wq04ib7p",
     },
 )
 
@@ -241,7 +241,7 @@ platform(
     name = "ash-bash-strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686:hl21lasnmdbapkc51svgy6zbmscrsdx2",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686:ycjcb4z5zx45nizqrc43lz6i3b44zszy",
     },
 )
 
@@ -249,7 +249,7 @@ platform(
     name = "ash-bash-strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-cc:ncii9hvn8qpl61r5ixsh2qa1sschay28",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-cc:kmnvvirrcxxga1ivgxjy9kmf72xfjdm2",
     },
 )
 
@@ -257,7 +257,7 @@ platform(
     name = "ash-bash-strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-cc-x86_64:j2nw8g97krrhqp6drbdny1gxdfidgcyp",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-cc-x86_64:mdqpwjlh0rck8dbhk94k96klicqzxpxg",
     },
 )
 
@@ -265,7 +265,7 @@ platform(
     name = "ash-bash-strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-cc-x86_64-cc:y6c8cvch78wa0b1cws19c5j61mmdif30",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-cc-x86_64-cc:sjs3zv2q2namzf1nimj4jd614fxl841h",
     },
 )
 
@@ -273,7 +273,7 @@ platform(
     name = "ash-bash-strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-x86_64:b3nrp3b4lv5nkdy0svk6fa1v5mhh2c7p",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-x86_64:v0bp7kfh2x6n1ixxbxa66c73llrd4d7b",
     },
 )
 
@@ -281,7 +281,7 @@ platform(
     name = "ash-bash-strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-x86_64-cc:ifs9rp6m0lqyf7cl0hfyw7ry1y3qw23m",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-i686-x86_64-cc:7bjwxi2cmakjcyykxcnng5jyvmdahbq2",
     },
 )
 
@@ -289,7 +289,7 @@ platform(
     name = "ash-bash-strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-x86_64:ks052wpf0ri70q6jig293n8zzww6xb2i",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-x86_64:7vvimygxwy4pikyckfwahqw9742nyswj",
     },
 )
 
@@ -297,7 +297,7 @@ platform(
     name = "ash-bash-strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-x86_64-cc:4kpplbczmvypkzw8n13plgqgrfdzwc6j",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-strace-x86_64-cc:3r2f7jjn76ps6jg8al3wfk47dc1pbbw9",
     },
 )
 
@@ -305,7 +305,7 @@ platform(
     name = "ash-bash-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-x86_64:rbwhcrzk71n8ksdw70chhglw03vk6zag",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-x86_64:w70kks7bpn75h5gfmn68wpf4k442y3j7",
     },
 )
 
@@ -313,7 +313,7 @@ platform(
     name = "ash-bash-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-x86_64-cc:3crl06vrmv0s1ilvpdnbigrnnsqgdw5a",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-bash-x86_64-cc:l51a5lhd1z7vw6rjngz8ldgsx0znm424",
     },
 )
 
@@ -321,7 +321,7 @@ platform(
     name = "ash-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils:d5ivww7mcisqnbywwvlgxdnijkiik952",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils:z08bj29qk9imw869n69shdd40h899n56",
     },
 )
 
@@ -329,7 +329,7 @@ platform(
     name = "ash-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686:nckflkh9001kcms8v5l0612dfc9qvyjz",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686:r3n6apzv83lgc4vy8c62yxd1g4rin104",
     },
 )
 
@@ -337,7 +337,7 @@ platform(
     name = "ash-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-cc:gq39wmc40qdsry9kac8999n17rn5vr20",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-cc:8qa0v2sri3v1v52nmr1zh04czsrzcapw",
     },
 )
 
@@ -345,7 +345,7 @@ platform(
     name = "ash-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-cc-x86_64:vj0d88rqy052daxva1w2k0i51dd9j4mz",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-cc-x86_64:3gk9c5vy21ffx9lyi50bp7jxfblxwhbs",
     },
 )
 
@@ -353,7 +353,7 @@ platform(
     name = "ash-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-cc-x86_64-cc:frnl0x26sjn4rpd76sx15kiw9m766c1q",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-cc-x86_64-cc:q02g9qf6jzcflbmjy0brc7m2j7q12yg3",
     },
 )
 
@@ -361,7 +361,7 @@ platform(
     name = "ash-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-x86_64:9a3drvphqdym402fdhynpk13a1fihmni",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-x86_64:6cjzzm5vv3n25jxiaxd2m04n2xkybpib",
     },
 )
 
@@ -369,7 +369,7 @@ platform(
     name = "ash-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-x86_64-cc:r0p8cl9jjsx65cbd8w5f1ax7dmkw5zgg",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-i686-x86_64-cc:gnynsaikdpihc9ndw54g6f8fx78rx3q2",
     },
 )
 
@@ -377,7 +377,7 @@ platform(
     name = "ash-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-x86_64:0llvs5g44nhjarfsyyf55vq64z47lshq",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-x86_64:xvczsxqx7k5i0g1hrp9y51ylc713c2b1",
     },
 )
 
@@ -385,7 +385,7 @@ platform(
     name = "ash-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-x86_64-cc:9z9cg39bhi05nnldi0pqixlqfcfp6s5p",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-coreutils-x86_64-cc:vx92wppgyknsyyd4k80i58hb362wkpsc",
     },
 )
 
@@ -393,7 +393,7 @@ platform(
     name = "ash-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686:1v2ni2wabnk223pxgz25bl1jczqa4mpk",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686:lnbzmipdyvfgml43f6vh16bykr8jx1x0",
     },
 )
 
@@ -401,7 +401,7 @@ platform(
     name = "ash-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc:aycmsypbiv9qllmc5jysixhs8jr5zcb6",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc:w2j9px0n3vxvxa4y0hppq4sn8zqsf2ba",
     },
 )
 
@@ -409,7 +409,7 @@ platform(
     name = "ash-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc-x86_64:hfb1w2npr2gh1rynkd22qifcfjdrlnni",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc-x86_64:pgk05wp1cp4agx07f8wjbvvjnr5px1l7",
     },
 )
 
@@ -417,7 +417,7 @@ platform(
     name = "ash-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc-x86_64-cc:dv0hmds11qr9m2ncwj7cba7y5mb36hxi",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-cc-x86_64-cc:9wqxw3fzjrapm6hg823f7vzbk2af3y5n",
     },
 )
 
@@ -425,7 +425,7 @@ platform(
     name = "ash-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-x86_64:qvkh28p5apy2yc9rknndjnh5acln52jx",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-x86_64:w9dhlavssr5ypx610dcp9aiizbmi6ybk",
     },
 )
 
@@ -433,7 +433,7 @@ platform(
     name = "ash-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-x86_64-cc:bibjf6lyhavawv3v885aq73qngnqy4yk",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-i686-x86_64-cc:a1zv17ds5hlbjg7v7i2ddyb5c0xk70ak",
     },
 )
 
@@ -441,7 +441,7 @@ platform(
     name = "ash-strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace:xxha96lyw1ra4vp36rh6ys0h35sz4bxi",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace:6135lgvb69crlrlrdynk9f1qhcqd7w6m",
     },
 )
 
@@ -449,7 +449,7 @@ platform(
     name = "ash-strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils:8nj7ijih8lylfd3z4hhj20g86q9c102q",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils:ixsfl4ncq8vdpc4dp2fyi9ghm9c1jika",
     },
 )
 
@@ -457,7 +457,7 @@ platform(
     name = "ash-strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686:ydbvjiiw2pknx46zvg7afdgndqm23l3p",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686:vzfg86cvnwys2zawxixba5ndbdh3knl5",
     },
 )
 
@@ -465,7 +465,7 @@ platform(
     name = "ash-strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-cc:hb28vgdp0i8dw2s07j1s6amp68d3rgsw",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-cc:mn6isvmj55j8bqmjpcs2pv466iyyd8pk",
     },
 )
 
@@ -473,7 +473,7 @@ platform(
     name = "ash-strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-cc-x86_64:29qa8nn79a60pyrvqdmlqdxqly85p0p4",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-cc-x86_64:4xnp761k9iq9xq5nalhm5hnmmcizql6k",
     },
 )
 
@@ -481,7 +481,7 @@ platform(
     name = "ash-strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-cc-x86_64-cc:mcj3dw9qcjvnhsnzfgfdk9h96f7rvyd5",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-cc-x86_64-cc:w18hf397fzbz8rl5f2cawylrrp6y95zb",
     },
 )
 
@@ -489,7 +489,7 @@ platform(
     name = "ash-strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-x86_64:6km53y1zaqkxm4hb582ricqisfy4pfg6",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-x86_64:9d3r964hy73g43plxh2hhddn9swqmnx5",
     },
 )
 
@@ -497,7 +497,7 @@ platform(
     name = "ash-strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-x86_64-cc:v6xpcbdxh0iyj4m8s5jl7f3s48jpxl93",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-i686-x86_64-cc:r57iypapx23srzw1fclky1vw5c3avrj2",
     },
 )
 
@@ -505,7 +505,7 @@ platform(
     name = "ash-strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-x86_64:11a2jdhlqapcb9hpa9vn6ddrzgn4ck2r",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-x86_64:bzg87r59vr907szs9qx1prvy23a0i852",
     },
 )
 
@@ -513,7 +513,7 @@ platform(
     name = "ash-strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-x86_64-cc:rq3qjjgbkqmvjavqcdysjzx3rssrnbr6",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-coreutils-x86_64-cc:x4qbzv8shpkfw8a5aqqbv1jil8dhvaxw",
     },
 )
 
@@ -521,7 +521,7 @@ platform(
     name = "ash-strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686:c4hb1j906ca50cwjd6s37i0bqck4a1mj",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686:i60bsp99bb34dkcy6sfrq2109d4l67yl",
     },
 )
 
@@ -529,7 +529,7 @@ platform(
     name = "ash-strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-cc:25d55dziny6h8ng3zb7ahq1hm1rfxifa",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-cc:7wiqwy1d1gc31pl58i8fq6l0hwdaz0db",
     },
 )
 
@@ -537,7 +537,7 @@ platform(
     name = "ash-strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-cc-x86_64:fbh38v5vn7j8xygd2fyqv8jby71hhiii",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-cc-x86_64:8ci74268rkn0v9zlj3qk4k737qb2dcxc",
     },
 )
 
@@ -545,7 +545,7 @@ platform(
     name = "ash-strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-cc-x86_64-cc:5y8kyrxqada764zx6hqfbhsms2z0psyr",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-cc-x86_64-cc:wx9has7rj4i7pxb8c4530wb4k6k31mls",
     },
 )
 
@@ -553,7 +553,7 @@ platform(
     name = "ash-strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-x86_64:6w9nb4pz6nkyi8cgq15aqz3x4idpa8jq",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-x86_64:74wx760jayk9vzj14m1aznc7z22dnpzq",
     },
 )
 
@@ -561,7 +561,7 @@ platform(
     name = "ash-strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-x86_64-cc:z2f9cikkfj7959aspfpc8l6vaa196x2f",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-i686-x86_64-cc:bny0gqwz0mc3mb83ib896pxpi0s1q42x",
     },
 )
 
@@ -569,7 +569,7 @@ platform(
     name = "ash-strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-x86_64:pkklqvqza3d868zqid1ys593dbhmrqy6",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-x86_64:75f5jci7kv1rl5zmwg3wb18knv37ff04",
     },
 )
 
@@ -577,7 +577,7 @@ platform(
     name = "ash-strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-x86_64-cc:mhyvc26ii23l15fyjvd20r51flxfcb7r",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-strace-x86_64-cc:1p4b7j6f94fxwsdvx7zhgnca3yzkmg91",
     },
 )
 
@@ -585,7 +585,7 @@ platform(
     name = "ash-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-x86_64:sbqnr8lpg7fgzahgjaim6375awabpjz2",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-x86_64:gkhsk0d2gkdaq5i4fbhh7yfv5f8yby9h",
     },
 )
 
@@ -593,7 +593,7 @@ platform(
     name = "ash-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-x86_64-cc:7w4ija8acf9p1lh0p7qlvgzr2qg3r8im",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/ash-x86_64-cc:v9m6v8m5wcrpxgrlsmn7sfxf4f0053fy",
     },
 )
 
@@ -601,7 +601,7 @@ platform(
     name = "bash",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash:jxiv3jqnh8qq42c88hafqdf2llz2hxcf",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash:53bllyph65hcsvvf4xq5gi4javbim6hb",
     },
 )
 
@@ -609,7 +609,7 @@ platform(
     name = "bash-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils:406fh60s8z7b4jyxx9l802q85mns2zhc",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils:w1xs4m8j4m8dz6rnn6hnzdircp92cm6q",
     },
 )
 
@@ -617,7 +617,7 @@ platform(
     name = "bash-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686:2s7yyrpjc9d0rrr345hyc7mh651kqqgf",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686:s7vnx1414wv8fl4yhshkcwkajq448hlm",
     },
 )
 
@@ -625,7 +625,7 @@ platform(
     name = "bash-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-cc:nxdvhihc46kvk3s39m32fjysayx1v2bp",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-cc:haf5dxgyajgcra7pz5fjhbha93hvqpap",
     },
 )
 
@@ -633,7 +633,7 @@ platform(
     name = "bash-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-cc-x86_64:vaik80diciv31djaqln7qj05i4zf0jpc",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-cc-x86_64:0mck0nzmrq00nan62cr83wf1xxnpiisv",
     },
 )
 
@@ -641,7 +641,7 @@ platform(
     name = "bash-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-cc-x86_64-cc:8z5rchcxpx5r7f5sncymh1l8lw7b51la",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-cc-x86_64-cc:k7if1218gpdqdq7ndg9jz5y84yflq10k",
     },
 )
 
@@ -649,7 +649,7 @@ platform(
     name = "bash-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-x86_64:bcmvy7qbjbg2akdpc751pfc29vmj9b34",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-x86_64:fqygss009gy27cdaip42xx86pb2jfy0r",
     },
 )
 
@@ -657,7 +657,7 @@ platform(
     name = "bash-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-x86_64-cc:3bai6cadawq0j5048p319gq768vbpmgm",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-i686-x86_64-cc:wpslz71yc1l031idar6ihiaa7kp5qszw",
     },
 )
 
@@ -665,7 +665,7 @@ platform(
     name = "bash-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-x86_64:g9lxpwc7b7wfwl7xjf8d60mx6swn2m5p",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-x86_64:l5aqn8w5g6jkay395aw2xbz5ajkabdch",
     },
 )
 
@@ -673,7 +673,7 @@ platform(
     name = "bash-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-x86_64-cc:l7nzy9f6aa7spayanbd3y6xp0b6w7yiw",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-coreutils-x86_64-cc:z0pchww1xdc1q0ikxk5lpdrlkj66h9b6",
     },
 )
 
@@ -681,7 +681,7 @@ platform(
     name = "bash-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686:v6r2fdrz3c7rhxnfjp7qgwfqzpzm9qjj",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686:8m9fsjma17ndc8s963wkiali4wkcn4x4",
     },
 )
 
@@ -689,7 +689,7 @@ platform(
     name = "bash-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-cc:3bf72p4wbsq5ncgq25q7fcycafz3zhi9",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-cc:rc4vbkjy264b1s9kg06h9pi8937zp7fy",
     },
 )
 
@@ -697,7 +697,7 @@ platform(
     name = "bash-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-cc-x86_64:jqlfyhggs1gz91nzr8flx3ygn4njm4dg",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-cc-x86_64:x73v35z36qs1lycca69nbs2qx344wp4x",
     },
 )
 
@@ -705,7 +705,7 @@ platform(
     name = "bash-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-cc-x86_64-cc:946ypy1xm3kwsq8d1y269f52b035w567",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-cc-x86_64-cc:1nfyikd0hbz4xbc54ava851q0zdybimv",
     },
 )
 
@@ -713,7 +713,7 @@ platform(
     name = "bash-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-x86_64:faa7npz509n1w3gfcv71s8pp0ygrk4wc",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-x86_64:li8inp2njhrasns6jccf3w10pksfiqg3",
     },
 )
 
@@ -721,7 +721,7 @@ platform(
     name = "bash-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-x86_64-cc:gbvky818hwq9g0dx57icwqd6xgddsn9v",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-i686-x86_64-cc:hvydjs5ch6qyznyiy1fcvyab2jayc7iv",
     },
 )
 
@@ -729,7 +729,7 @@ platform(
     name = "bash-strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace:iswv7crmk02924g90vzwnpxgy3pn3by9",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace:5hbgll2qrad9prrglf08d4iyikdni656",
     },
 )
 
@@ -737,7 +737,7 @@ platform(
     name = "bash-strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils:8dijqkh8rpx18rnv9c4r5i2xkyd92c7q",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils:7cq1qqzmw5wv2jcn07azki7bhf1hn5sv",
     },
 )
 
@@ -745,7 +745,7 @@ platform(
     name = "bash-strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686:i78vgp976nlvr9j45dnklj8f9npq53c8",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686:xdy3w5nxz81s93x5fsxqgi96q99azdli",
     },
 )
 
@@ -753,7 +753,7 @@ platform(
     name = "bash-strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-cc:irb3cz2745i770ph875wiwch0v18qyhi",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-cc:q4kpvhrhq023zswikry13zi896wx6knd",
     },
 )
 
@@ -761,7 +761,7 @@ platform(
     name = "bash-strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-cc-x86_64:41zqv7z5dis1qgdgygfgjx98kqx4rkps",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-cc-x86_64:vgwync8r8b6n7qk223x2fibqfrg542r7",
     },
 )
 
@@ -769,7 +769,7 @@ platform(
     name = "bash-strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-cc-x86_64-cc:pm6cb82w254a9bfx4mhna02frr58hr0n",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-cc-x86_64-cc:qc3gmibslnx2rxbhwz8bpw58xcipmb3k",
     },
 )
 
@@ -777,7 +777,7 @@ platform(
     name = "bash-strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-x86_64:bxf17waxga7057shkdwk999p6jmfijnm",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-x86_64:lhs4cjvx3md905m9n9z462r2dn5q4xd6",
     },
 )
 
@@ -785,7 +785,7 @@ platform(
     name = "bash-strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-x86_64-cc:9pc6wadqaany0c4v8ckislqgm82ncfma",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-i686-x86_64-cc:35ksslwskzn961ssc20nkbgz2bq60k5y",
     },
 )
 
@@ -793,7 +793,7 @@ platform(
     name = "bash-strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-x86_64:sw9n27mhdpllvc7hpqjj0xhqrsmhyb76",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-x86_64:d2qybykpkf14c0407ancghn7zlpcbxml",
     },
 )
 
@@ -801,7 +801,7 @@ platform(
     name = "bash-strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-x86_64-cc:gwb4rarpqx6xzkixfipnsww0l8crgqmc",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-coreutils-x86_64-cc:axxlv8bcxswggj66la7knkbb7xy6xy3m",
     },
 )
 
@@ -809,7 +809,7 @@ platform(
     name = "bash-strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686:aby6l2h91s3wivvnl0ykxgk5b2d3fcs7",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686:yhj1cg5g1nbq4nx6zxm3hglbpvhhgpn8",
     },
 )
 
@@ -817,7 +817,7 @@ platform(
     name = "bash-strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-cc:6ylxv74bwa2zf3n9zsv2p5vrb6snn76b",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-cc:z8p8xl4jkj1lvbm40rrrr065hnk78iv7",
     },
 )
 
@@ -825,7 +825,7 @@ platform(
     name = "bash-strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-cc-x86_64:hk4gxc2x8vrb11kqg66vwha5ysdgrsbf",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-cc-x86_64:47ivcc7vkyy5khscc8wa4n2mqmxacpgh",
     },
 )
 
@@ -833,7 +833,7 @@ platform(
     name = "bash-strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-cc-x86_64-cc:lc8p1b04n38s765l3ibn8b2vvxvh49bl",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-cc-x86_64-cc:ziffv80sxka79jfl0dcv3rjv62ah6qjz",
     },
 )
 
@@ -841,7 +841,7 @@ platform(
     name = "bash-strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-x86_64:isbjs51w3vgd25qs2i84xaf7z6dykn1x",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-x86_64:ybf6ncgycazvjqikscyg4d3yhfs8k5ra",
     },
 )
 
@@ -849,7 +849,7 @@ platform(
     name = "bash-strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-x86_64-cc:f2lcs98swschqbzc660m4a49f1mwi65d",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-i686-x86_64-cc:gc1hxj5jq38hyyc5bidf5bjp76gw3pcb",
     },
 )
 
@@ -857,7 +857,7 @@ platform(
     name = "bash-strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-x86_64:44xdrb59kkzm0mv734p54m7rba8nik4n",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-x86_64:p4is3y4iv06vcaj54zm9v9af18igqh6j",
     },
 )
 
@@ -865,7 +865,7 @@ platform(
     name = "bash-strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-x86_64-cc:ln9fizyz1g15dknysxrv6ynb9l8ncp8r",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-strace-x86_64-cc:0yq4q1z4jklsrf8fw2c8ny2l51dsw85k",
     },
 )
 
@@ -873,7 +873,7 @@ platform(
     name = "bash-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-x86_64:a3d38kkcymk5n5qnzrx0w12nq9z6af42",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-x86_64:s4ysf4lnnzbgi2zjd238rb1dv36wfz8q",
     },
 )
 
@@ -881,7 +881,7 @@ platform(
     name = "bash-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-x86_64-cc:9njv1cz2nnlb8k2fmk6m9hr94gdgjb54",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/bash-x86_64-cc:yd0x3cldfj8dn9f103yws8rzq86wih7f",
     },
 )
 
@@ -889,7 +889,7 @@ platform(
     name = "coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils:klw5xqs2chizygp64ihifcm4khbm1x3d",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils:xr0jn3x6ald91f83czxzgp9a20943d19",
     },
 )
 
@@ -897,7 +897,7 @@ platform(
     name = "coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686:kw77dm3cl5vhk8izq5h6mwxyxa7b7893",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686:hqm7qa3xa4z94c3jig44b2g6j0981sbm",
     },
 )
 
@@ -905,7 +905,7 @@ platform(
     name = "coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-cc:1wz4dnnzndryyvpzb0r5j9z8hwma2fy3",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-cc:s56vsx4c7jxdwgdfmcsvknx6xw8l5imz",
     },
 )
 
@@ -913,7 +913,7 @@ platform(
     name = "coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-cc-x86_64:zjn3mnb8jhmjvzb67h6dbb5rzzqkbqrf",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-cc-x86_64:632bmc3417p0rnwwcs6dg627vg558mhz",
     },
 )
 
@@ -921,7 +921,7 @@ platform(
     name = "coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-cc-x86_64-cc:2hlpkjmik0vy3fy4x623kpw8ggvnv5p6",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-cc-x86_64-cc:wymq9rwc359y159sd3mw4hpnyyw6wwk2",
     },
 )
 
@@ -929,7 +929,7 @@ platform(
     name = "coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-x86_64:naj8mfqn9alxgbx9cgd3ji2ca04na9yi",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-x86_64:bz9xlm9d4j67ydzb508j3gijll9v003p",
     },
 )
 
@@ -937,7 +937,7 @@ platform(
     name = "coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-x86_64-cc:q4p3924cc7a6xk3x2ddbz56pd0v3q8jk",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-i686-x86_64-cc:ilh4m2hmzw02v5vb6yi536vlgiqp963h",
     },
 )
 
@@ -945,7 +945,7 @@ platform(
     name = "coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-x86_64:fn7i1jd3cm81288vnfn85l2l9v8870wd",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-x86_64:bfyhjaqfndqyzprj2y1m2k0f2fwjxbxr",
     },
 )
 
@@ -953,7 +953,7 @@ platform(
     name = "coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-x86_64-cc:r5ampg4dgyr39qx2vavv1pd61r9hpik9",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/coreutils-x86_64-cc:6maxwh90bv7x5ivxabh3bxpj26wsqc4f",
     },
 )
 
@@ -961,7 +961,7 @@ platform(
     name = "i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686:39vjl8lyzv9cvkqpzzqkmq6h7r11f6m6",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686:70fwsljzl8h98yv2fiaar2x7l29bpp9v",
     },
 )
 
@@ -969,7 +969,7 @@ platform(
     name = "i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-cc:l0f5jp2v4qni8s43yys4bqy28n0svip7",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-cc:88ksfzmzr05k4bwx9pw7kmaq5p54n5ar",
     },
 )
 
@@ -977,7 +977,7 @@ platform(
     name = "i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-cc-x86_64:zgh95bly86w6ig6dzwfhv7cypmyiadgy",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-cc-x86_64:92vrrci5q878q2raw6mi5w7r4ahhrjv6",
     },
 )
 
@@ -985,7 +985,7 @@ platform(
     name = "i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-cc-x86_64-cc:a5z03kbpb3myrgp3bx7f222x03q693s2",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-cc-x86_64-cc:b4wavzsani308r9hj2b16mrnw8cvpybv",
     },
 )
 
@@ -993,7 +993,7 @@ platform(
     name = "i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-x86_64:1ld2cpk8pyy7kimccpqj7dsb4haxnlvk",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-x86_64:dc9hbjp0jifwzckxj1psc4y2vmrhaq1m",
     },
 )
 
@@ -1001,7 +1001,7 @@ platform(
     name = "i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-x86_64-cc:ns42bid46l2z9fjlm1d03is8igw3w8qj",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/i686-x86_64-cc:pzip5c2f47gd45n1sbh5ybqmvwsr4337",
     },
 )
 
@@ -1009,7 +1009,7 @@ platform(
     name = "strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace:50ng9li0192h16wy4hsjgwbzlmry8d4g",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace:v9kdy8mb9b8hkjn5rc5wmsqg9xmd71q5",
     },
 )
 
@@ -1017,7 +1017,7 @@ platform(
     name = "strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils:3sqddf97kqkz3wva2kmi49mg76jln247",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils:l54py8rh5i2alrqpis6p01g99s5200l7",
     },
 )
 
@@ -1025,7 +1025,7 @@ platform(
     name = "strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686:2jq66m348bi72azl1qa90fdd1v5walk7",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686:jax1q5kmilb6g2csmij50mjwh1nsssbc",
     },
 )
 
@@ -1033,7 +1033,7 @@ platform(
     name = "strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-cc:x7pxv73kdz9x3q4hf6cvza0slm8l8ndi",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-cc:j7q3aghxzfbk2d827ck0ddnida8j02q3",
     },
 )
 
@@ -1041,7 +1041,7 @@ platform(
     name = "strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-cc-x86_64:f71szkh9ljh4gzpzjndkxgwc65sbq7z7",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-cc-x86_64:qbk53wcsrz2fwd87pl2w8rjdrrn8y7q3",
     },
 )
 
@@ -1049,7 +1049,7 @@ platform(
     name = "strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-cc-x86_64-cc:y4wnvpv3b2shbjkqbrmdawhycmghahmh",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-cc-x86_64-cc:s4fjx0icp4srrw43z9crgavmkfp5msv3",
     },
 )
 
@@ -1057,7 +1057,7 @@ platform(
     name = "strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-x86_64:7fw66cs9c1jsvw19msiq5sl5c75ix68c",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-x86_64:5h1i2qwhznfmpjp73g3zmlqkdvalm9s3",
     },
 )
 
@@ -1065,7 +1065,7 @@ platform(
     name = "strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-x86_64-cc:8b2ch49az7mgy0av6v5v7f5awahxwf75",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-i686-x86_64-cc:d8madrhmsayi6zfphspalcaxwgg7gjhz",
     },
 )
 
@@ -1073,7 +1073,7 @@ platform(
     name = "strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-x86_64:3i28rhf1ssnwjx5y32r8krr9xg60hqr5",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-x86_64:3lyl3y90sfdx0wcv2nfimw4famygfwx2",
     },
 )
 
@@ -1081,7 +1081,7 @@ platform(
     name = "strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-x86_64-cc:svjgplnv5ay3yhclkw0s79h703sbp445",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-coreutils-x86_64-cc:1617y4k3nbb2vs08g7hz3g4xj6zv1bir",
     },
 )
 
@@ -1089,7 +1089,7 @@ platform(
     name = "strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686:n468rw45mm8dig5l6jr0cn9jj90lhzmz",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686:sbz28822ka8xganyq13klw4xrlahvvjx",
     },
 )
 
@@ -1097,7 +1097,7 @@ platform(
     name = "strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-cc:ldiyga81w7rvdyqv95z0lpdylhblxa43",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-cc:n006hzjlaw1s6fxyp2mals1w42lv0pvz",
     },
 )
 
@@ -1105,7 +1105,7 @@ platform(
     name = "strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-cc-x86_64:rrcih4jv6k0rr2lxp5kiry5y8flgnr9s",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-cc-x86_64:4v5zwjcfkrhcjbcmxg56c37s1s9z99xg",
     },
 )
 
@@ -1113,7 +1113,7 @@ platform(
     name = "strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-cc-x86_64-cc:gykdllf14f9fyrm9rqby4fwrdrx3c8if",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-cc-x86_64-cc:r2ds96ybmj6xc78m52304jwq846l00bp",
     },
 )
 
@@ -1121,7 +1121,7 @@ platform(
     name = "strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-x86_64:9cmscgw088igv3fsk19dab8wkj9ida9d",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-x86_64:r7j2br7kcz82zfcn5xqjf6chqvzvigwz",
     },
 )
 
@@ -1129,7 +1129,7 @@ platform(
     name = "strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-x86_64-cc:kfchjmzzlzw287frayw4k5vnb3vp44l9",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-i686-x86_64-cc:7h7ki31by1w2l6cibk1gc7x3wqhnscm6",
     },
 )
 
@@ -1137,7 +1137,7 @@ platform(
     name = "strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-x86_64:6b6kn7xrmv1i2f0xyhkgjlzf23lfnlqf",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-x86_64:y802cd9prckpb186izb5yr6mpi3yfzwd",
     },
 )
 
@@ -1145,7 +1145,7 @@ platform(
     name = "strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-x86_64-cc:047dzkfc42pcx76qpqn34mskzvfgbh00",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/strace-x86_64-cc:1yrashd9z4c6bf3v8h6fy9206h5bi0b5",
     },
 )
 
@@ -1153,7 +1153,7 @@ platform(
     name = "x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/x86_64:x58121n6iznjxr7s0iw7cw6vkx4h7lji",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/x86_64:z9c61rsqjilnwaa95pl7l50kjc35jf8d",
     },
 )
 
@@ -1161,7 +1161,7 @@ platform(
     name = "x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/x86_64-cc:lrz1r1sbjwgliq1nvsslhbyfbwn0vfmd",
+        "container-image": "docker://harbor.apps.morrigna.rules-nix.build/explore-bzl/x86_64-cc:ax88zak2p867xvpasp8hix85ja2gssp5",
     },
 )
 
