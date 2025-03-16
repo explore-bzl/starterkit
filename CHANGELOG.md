@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.10.0](https://github.com/explore-bzl/starterkit/compare/185b62c1f65034fc631712018ab0bfe9c300e62f..v0.10.0) - 2025-03-16
+#### Bug Fixes
+- **(ci)** issues with using bubblewrap in github runner - ([2e36640](https://github.com/explore-bzl/starterkit/commit/2e36640f7519c07d447fde44b56194179fed1c06)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+#### Documentation
+- fix table of available images - ([185b62c](https://github.com/explore-bzl/starterkit/commit/185b62c1f65034fc631712018ab0bfe9c300e62f)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+#### Features
+- **(update)** update the nixpkgs to latest as of 2025-03-16 - ([3a0e682](https://github.com/explore-bzl/starterkit/commit/3a0e682476177ca6b1fb5f4370b09658f6fbe23c)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+- update to uninative 4.7 - ([d0cfc81](https://github.com/explore-bzl/starterkit/commit/d0cfc8188b49a4dc31df6e241397744e859fa807)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
+
+- - -
+
 ## [v0.9.1](https://github.com/explore-bzl/starterkit/compare/0c1c0d68ca3821827c75e5ca0b4bb5176ee7e63c..v0.9.1) - 2024-09-26
 #### Bug Fixes
 - images config entry cmd - ([0c1c0d6](https://github.com/explore-bzl/starterkit/commit/0c1c0d68ca3821827c75e5ca0b4bb5176ee7e63c)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
