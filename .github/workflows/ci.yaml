@@ -10,7 +10,7 @@ on:
 jobs:
   validate-images:
     name: "validate-images"
-    runs-on: ["ubuntu-latest"]
+    runs-on: ["ubuntu-22.04"]
     defaults:
       run:
         shell: nix-shell --run "set -eo pipefail; source {0}"
