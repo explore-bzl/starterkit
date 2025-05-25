@@ -8,7 +8,7 @@ with builtins; let
     path = ./BUILD.template.bazel;
     name = "BUILD.template.bazel";
   });
-  registryUrl = "harbor.apps.morrigna.rules-nix.build/explore-bzl";
+  registryUrl = "harbor.puqu.io/starterkit";
   platformDefinitions =
     concatStringsSep "\n" (map (name: let
           image = images.${name}.image.out;

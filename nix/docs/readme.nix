@@ -8,7 +8,7 @@ with builtins; let
     path = ./README.template.md;
     name = "README.template.md";
   });
-  registryUrl = "harbor.apps.morrigna.rules-nix.build/explore-bzl";
+  registryUrl = "harbor.puqu.io/starterkit";
   markdownTableWithContainers = concatStringsSep "\n" (
     ["<markdown-accessiblity-table><table><thead><tr><th>Image</th><th>Description</th><th>Pull</th></tr></thread><tbody>"]
     ++ (map (name: let

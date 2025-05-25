@@ -49,7 +49,7 @@ jobs:
       - name: "Publish the images to harbor"
         shell: bash
         run: |2
-          $(nix-build --no-out-link default.nix -A images.all.push) harbor.apps.morrigna.rules-nix.build/explore-bzl '${{ secrets.harbor_user }}' '${{ secrets.harbor_token }}'
+          $(nix-build --no-out-link default.nix -A images.all.push) harbor.puqu.io/starterkit '${{ secrets.harbor_user }}' '${{ secrets.harbor_token }}'
 
       - name: "Get project meta"
         id: get_project_meta
