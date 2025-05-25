@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.11.0](https://github.com/explore-bzl/starterkit/compare/d8e01be6b53fd54100e8b2cf16355492671a6af2..v0.11.0) - 2025-05-25
+#### Features
+- **(update)** update the nixpkgs to latest as of 2025-05-25 - ([d8e01be](https://github.com/explore-bzl/starterkit/commit/d8e01be6b53fd54100e8b2cf16355492671a6af2)) - Artur Stachecki
+
+- - -
+
 ## [v0.10.0](https://github.com/explore-bzl/starterkit/compare/185b62c1f65034fc631712018ab0bfe9c300e62f..v0.10.0) - 2025-03-16
 #### Bug Fixes
 - **(ci)** issues with using bubblewrap in github runner - ([2e36640](https://github.com/explore-bzl/starterkit/commit/2e36640f7519c07d447fde44b56194179fed1c06)) - [@AleksanderGondek](https://github.com/AleksanderGondek)
