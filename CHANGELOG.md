@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.12.0](https://github.com/explore-bzl/starterkit/compare/fd7c6825f90ac73b1ae12176a098c6b1083d67f7..v0.12.0) - 2025-06-18
+#### Features
+- **(update)** update the nixpkgs to latest as of 2025-06-18 - ([64bc394](https://github.com/explore-bzl/starterkit/commit/64bc394986700cce0b705b93ced59bf18dd619e4)) - Artur Stachecki
+#### Miscellaneous Chores
+- switch to puqu.io registry - ([fd7c682](https://github.com/explore-bzl/starterkit/commit/fd7c6825f90ac73b1ae12176a098c6b1083d67f7)) - Artur Stachecki
+
+- - -
+
 ## [v0.11.0](https://github.com/explore-bzl/starterkit/compare/d8e01be6b53fd54100e8b2cf16355492671a6af2..v0.11.0) - 2025-05-25
 #### Features
 - **(update)** update the nixpkgs to latest as of 2025-05-25 - ([d8e01be](https://github.com/explore-bzl/starterkit/commit/d8e01be6b53fd54100e8b2cf16355492671a6af2)) - Artur Stachecki

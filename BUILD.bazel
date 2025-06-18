@@ -25,7 +25,7 @@ platform(
     name = "ash",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash:qy7zyd1fdajgcgknnwmpb4v0gfg119fa",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash:fd20kbbbywiih422ki32lwh6nkfnfgl7",
     },
 )
 
@@ -33,7 +33,7 @@ platform(
     name = "ash-bash",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash:av5022vv36639z4rx3y556s9bwc0zakq",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash:0xvz0svnlvnvdykbm1apnyx8gcba9443",
     },
 )
 
@@ -41,7 +41,7 @@ platform(
     name = "ash-bash-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils:kvw5mfpzrz33qim734swxnpqa1gcl9kb",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils:8ggnsw49n873ihz3w3ga4k8glhrx15nk",
     },
 )
 
@@ -49,7 +49,7 @@ platform(
     name = "ash-bash-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686:z2i12qv8m2cx2234gg9mnji995bpai8b",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686:isvn5vhdll1wdvfb7ljfmllqnrybm36v",
     },
 )
 
@@ -57,7 +57,7 @@ platform(
     name = "ash-bash-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-cc:icw59f0pwjq9i5ab6ynfl0s36fj9d9sk",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-cc:gw9k9282bkqh8fawr42jc3lcnkvl93z4",
     },
 )
 
@@ -65,7 +65,7 @@ platform(
     name = "ash-bash-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-cc-x86_64:wvdsylg7f149k4lbbdk8fvnajfi0729q",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-cc-x86_64:pkhm5krkciiqdw94ms32xwbp4jgh09fc",
     },
 )
 
@@ -73,7 +73,7 @@ platform(
     name = "ash-bash-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-cc-x86_64-cc:ic6angvicd5kcasd286ba3iwaswbhkpn",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-cc-x86_64-cc:bgps70x1w9pqcg6hl4yj0gapnb4542bn",
     },
 )
 
@@ -81,7 +81,7 @@ platform(
     name = "ash-bash-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-x86_64:c90clxnya67mjvqawc3kgqsx4xr5x5s4",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-x86_64:yqx327izwj7ax71q1pdljzqn8dzl9ppr",
     },
 )
 
@@ -89,7 +89,7 @@ platform(
     name = "ash-bash-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-x86_64-cc:06yd6l1lsxik5a8qzs02h0kl7l92q7g0",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-i686-x86_64-cc:11pcyb7g29jah6qif1dqfvf3014rfzc6",
     },
 )
 
@@ -97,7 +97,7 @@ platform(
     name = "ash-bash-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-x86_64:a1zv5a8nbhfgd4l0kkcliyw6yx0l2ws6",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-x86_64:wndpwfc55syw3b984ncay9rcs144v3lh",
     },
 )
 
@@ -105,7 +105,7 @@ platform(
     name = "ash-bash-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-x86_64-cc:s6d7clwmq0nbwwbs096abr3l8kaslhgp",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-coreutils-x86_64-cc:0500q1z1ymxza9i95zd7xnihp340np79",
     },
 )
 
@@ -113,7 +113,7 @@ platform(
     name = "ash-bash-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686:qwyhj389zhhw35gkpad1y78k1v691nx7",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686:ynq82sqbkrxmrvc6rnpmw6562njcmc88",
     },
 )
 
@@ -121,7 +121,7 @@ platform(
     name = "ash-bash-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-cc:g12745x7hzxkddx7psvaa3lkr08pa1d2",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-cc:qcqhhvv7qc93xshnxbw7f82r7ksr6q83",
     },
 )
 
@@ -129,7 +129,7 @@ platform(
     name = "ash-bash-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-cc-x86_64:68m3gy1llqjw20gc3dx4aqnmkflksnz4",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-cc-x86_64:vcyg5k582506fiibvab7vfp6pxm8j0i5",
     },
 )
 
@@ -137,7 +137,7 @@ platform(
     name = "ash-bash-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-cc-x86_64-cc:5zq1mwd0lrbsx38q46rxy4ajl28cvv9s",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-cc-x86_64-cc:q6bx4g5bszmb5g0a5fy1rzr0rcr2c906",
     },
 )
 
@@ -145,7 +145,7 @@ platform(
     name = "ash-bash-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-x86_64:md3k4m1lz8854idiwj6yng52i9rhrjg2",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-x86_64:036yzblw3vbdfqz30kpaiirzg76zw5qn",
     },
 )
 
@@ -153,7 +153,7 @@ platform(
     name = "ash-bash-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-x86_64-cc:2mgy8fjqhjmybnws3qsnwp3lz34s6nmw",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-i686-x86_64-cc:73n4mrhxg78k95xra4050i9kvhss16hx",
     },
 )
 
@@ -161,7 +161,7 @@ platform(
     name = "ash-bash-strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace:cc75626cg6d96d4378zskv5gwkkh7jd5",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace:fd0jxfjp7k9qb9m759wbf3npqrnsgxmz",
     },
 )
 
@@ -169,7 +169,7 @@ platform(
     name = "ash-bash-strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils:xy1vq81mbvdarzyqvp0j2g6kapbqznqp",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils:ack82k64v0kha0ahkg35yj000as34mrv",
     },
 )
 
@@ -177,7 +177,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686:77s6fbw1b3m69g0j8s34f6pms5l3cvk8",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686:6v41njxpcb6nspgzh0l56ff5kfcnvy6f",
     },
 )
 
@@ -185,7 +185,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-cc:hr1fcdi8kgia8b58n0ar7mhgq78zj4bp",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-cc:ypsl4q9v07w1nnf6s1yyap4mxl6ym949",
     },
 )
 
@@ -193,7 +193,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-cc-x86_64:v6x5c4yr3qiw0hpqa5s79zl164axhfc7",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-cc-x86_64:m2kzn3kg9xd08wl87sxcim3q6qvh99li",
     },
 )
 
@@ -201,7 +201,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-cc-x86_64-cc:bfnqhz151wq0yszczsgn5224kajmm3qf",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-cc-x86_64-cc:fhqmliwijlkbfzpj42ynas5njrfshzki",
     },
 )
 
@@ -209,7 +209,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-x86_64:6dk76nl17h04a49mpx6zan43nzlmzdqx",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-x86_64:i4xdyf3m2f1g385alqx50i03rvj2gp68",
     },
 )
 
@@ -217,7 +217,7 @@ platform(
     name = "ash-bash-strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-x86_64-cc:knx5cbslnl8c8bpv6cswdgkvnvivv854",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-i686-x86_64-cc:da9wls76s3x8rkisrcnw4zzfcais8l36",
     },
 )
 
@@ -225,7 +225,7 @@ platform(
     name = "ash-bash-strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-x86_64:7yrlmn0j205ahpm7njxpfjfzq1qb06z1",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-x86_64:7spmha2bzjb8rf6aard1rwn4b7xq3mdr",
     },
 )
 
@@ -233,7 +233,7 @@ platform(
     name = "ash-bash-strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-x86_64-cc:pz5895m8d8f0if3gc5grp8wlbsc8mcmy",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-coreutils-x86_64-cc:3c3ry2x56znb3ig4xfqab26x99h85hjx",
     },
 )
 
@@ -241,7 +241,7 @@ platform(
     name = "ash-bash-strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686:awrp1p196nffp8xc39aaqn3dm9wx2gxg",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686:zjrj2l8ji0yhh8mbspa62c76n3ngq6qg",
     },
 )
 
@@ -249,7 +249,7 @@ platform(
     name = "ash-bash-strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-cc:mp7xm1j6xcpxdbc23nxhj3g6vrhylxf3",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-cc:3vw3ygb4x65d20fymilg1apyblvk54ll",
     },
 )
 
@@ -257,7 +257,7 @@ platform(
     name = "ash-bash-strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-cc-x86_64:jjpaxjhb7dm77n0clal62l49p9j525h1",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-cc-x86_64:cny6vz6kf4gcxi61iyahxbkxszkj889y",
     },
 )
 
@@ -265,7 +265,7 @@ platform(
     name = "ash-bash-strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-cc-x86_64-cc:jw7h9xb81hwxc9fw04gp14jxd85fn4lc",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-cc-x86_64-cc:w790bx47qwppcap9lzzfy4jyhlpad4ap",
     },
 )
 
@@ -273,7 +273,7 @@ platform(
     name = "ash-bash-strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-x86_64:k2zcazlh2h9g00c70qrvriracdm0gmsd",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-x86_64:a3fc5hsxj69d1x16mcpyn3k8d2s92lj6",
     },
 )
 
@@ -281,7 +281,7 @@ platform(
     name = "ash-bash-strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-x86_64-cc:k7x5bq45hbdd620g2srkzp56q197l4vk",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-i686-x86_64-cc:f4lm8krv8jhn8s8i6bxdqbnc1na7aq65",
     },
 )
 
@@ -289,7 +289,7 @@ platform(
     name = "ash-bash-strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-x86_64:70jvsnxqi81diwhn35h8h9jnlv096f0b",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-x86_64:idrvlkkmns7lkf11sn9l31lgjg7dacx1",
     },
 )
 
@@ -297,7 +297,7 @@ platform(
     name = "ash-bash-strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-x86_64-cc:75mhm2lap4zmgsjmb8w2202y0v6gv4db",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-strace-x86_64-cc:x5l5qd7j53q38hzn2h4m19pqii722n0q",
     },
 )
 
@@ -305,7 +305,7 @@ platform(
     name = "ash-bash-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-x86_64:bdizfyp54py2zyza0g97sb83rnmrddhl",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-x86_64:l38wyss4dclcn3nyrak18a425p2xavjp",
     },
 )
 
@@ -313,7 +313,7 @@ platform(
     name = "ash-bash-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-x86_64-cc:w7ixc4qak8h87ia5giandha1v9nw39dl",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-bash-x86_64-cc:hgpqx2s1smkid94dqh9qqlfcmpxf631y",
     },
 )
 
@@ -321,7 +321,7 @@ platform(
     name = "ash-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils:k360f6mpinwfcagx1q6aj6g05w932fv1",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils:hk8kxhbvw4818pblpdk81b4lb3pg5dr5",
     },
 )
 
@@ -329,7 +329,7 @@ platform(
     name = "ash-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686:4djqp7as1dwz4mz14xw96l1azdwrpdnn",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686:nzj4i99y8hzc70wx150s94d4l4nmdvld",
     },
 )
 
@@ -337,7 +337,7 @@ platform(
     name = "ash-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-cc:7sv95pmd6scrjwgpj915k1p0gw5zrgv1",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-cc:4rc7zwa2mr0g4is2q052ia42lm0gzm8m",
     },
 )
 
@@ -345,7 +345,7 @@ platform(
     name = "ash-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-cc-x86_64:mrsf88fg3ggy9cjjkayingaqngh2jjmb",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-cc-x86_64:43q279ygxim8s1j67wxv7a7kyrzh50di",
     },
 )
 
@@ -353,7 +353,7 @@ platform(
     name = "ash-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-cc-x86_64-cc:pg9jyg5mi7l1x1ibw3gl2z1h61sfvdwd",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-cc-x86_64-cc:qkzjn0nyj6j7f72q4hsgily8i0l9mwqs",
     },
 )
 
@@ -361,7 +361,7 @@ platform(
     name = "ash-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-x86_64:gj2xxwazmmjphz04bpqbvj8jsvn6g9hf",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-x86_64:ywn0q2xz8wnakkapgmci88nncyadrz4n",
     },
 )
 
@@ -369,7 +369,7 @@ platform(
     name = "ash-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-x86_64-cc:sg1s7hk994a6ca639ymdlpkxjhnxf4ki",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-i686-x86_64-cc:3k7lha7sa1v6xba9i2q088dr2dbqvh25",
     },
 )
 
@@ -377,7 +377,7 @@ platform(
     name = "ash-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-x86_64:a36k4bcknm9vj3v5v0wx5i91vq0nm407",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-x86_64:7sw9jd745i1kig9yw82hz335iys1lrp5",
     },
 )
 
@@ -385,7 +385,7 @@ platform(
     name = "ash-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-x86_64-cc:6mn8dialnzp2rif96kfrkkzaraa1ghqg",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-coreutils-x86_64-cc:kc209hp20raqvsv62prkdn9rfd1vh2fd",
     },
 )
 
@@ -393,7 +393,7 @@ platform(
     name = "ash-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686:188b84qa4db6zyhwpi14lvm3x1h39777",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686:2485g31rvlhs1wk5hipycickj6cr7b99",
     },
 )
 
@@ -401,7 +401,7 @@ platform(
     name = "ash-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-cc:4573vd5bzf7mm89zaj64i1g6jsz8gfbr",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-cc:9inj16j7iwm5fn7h05lmr7l1zsvrg909",
     },
 )
 
@@ -409,7 +409,7 @@ platform(
     name = "ash-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-cc-x86_64:gfhr75hfc78lj0s2snvkz0ixmjhi1icg",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-cc-x86_64:flkpdxrxhympjfr3662kmi4gh7ldg7f6",
     },
 )
 
@@ -417,7 +417,7 @@ platform(
     name = "ash-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-cc-x86_64-cc:7pc3d081wzi9k27xv3gc1sw7ir3d0396",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-cc-x86_64-cc:z2dfrqcmry34lpnb42yjhnxgx9vqwxk0",
     },
 )
 
@@ -425,7 +425,7 @@ platform(
     name = "ash-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-x86_64:wjjpal0yvm8m02j0wc737pr0izjrwkgn",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-x86_64:6bckqrfvnz7hlygrj4djig1f6h2ag0hp",
     },
 )
 
@@ -433,7 +433,7 @@ platform(
     name = "ash-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-x86_64-cc:3bllaqx3gvmhp606q9c66265cddg0ywl",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-i686-x86_64-cc:02vl5frz6af314sfvrya2f5j8plgj35a",
     },
 )
 
@@ -441,7 +441,7 @@ platform(
     name = "ash-strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace:nkzy8zy87vwaghiha96y7r1af72s4rwr",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace:2m035mwpyb00iq2lvdh878n58za0hx4i",
     },
 )
 
@@ -449,7 +449,7 @@ platform(
     name = "ash-strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils:p44fkyksiipj5p83c2nicb3a5ba0kz50",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils:m5mngwxc1d497v0v6vix5cqgz91yrv4r",
     },
 )
 
@@ -457,7 +457,7 @@ platform(
     name = "ash-strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686:xvcjn6hx9x9wnkbcwqwv3fzzxq633k55",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686:6nvkw4l0ydz01yjv3cjbhwpn63a9nz10",
     },
 )
 
@@ -465,7 +465,7 @@ platform(
     name = "ash-strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-cc:7q7r6sr9yixw3f09cdsmc35x6a6863dv",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-cc:lmc8b8zjg4sb65kij61h0zjnn20fpxzk",
     },
 )
 
@@ -473,7 +473,7 @@ platform(
     name = "ash-strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-cc-x86_64:4bb6hcivv1gwmcrf43kmdac5gfrmmifi",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-cc-x86_64:9k0rybv0zh21j1ii63nsgrv3igv5ah5g",
     },
 )
 
@@ -481,7 +481,7 @@ platform(
     name = "ash-strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-cc-x86_64-cc:gas6xqs5vc7h17vkg3k2y1x1brpk1nz8",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-cc-x86_64-cc:61s92xsa08y6q3cd015kbkphn8lpy4jv",
     },
 )
 
@@ -489,7 +489,7 @@ platform(
     name = "ash-strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-x86_64:d37di680jrda9f6c5ii6qc0d2n641qmc",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-x86_64:v6zackmsprzyfz18qn5y4v9bia65wj7p",
     },
 )
 
@@ -497,7 +497,7 @@ platform(
     name = "ash-strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-x86_64-cc:5h72nms7hvl251ygkcrprapwwlclihrp",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-i686-x86_64-cc:ky15pdylaj8vzx4d0sq87nlf1sdc3gly",
     },
 )
 
@@ -505,7 +505,7 @@ platform(
     name = "ash-strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-x86_64:58bg4wk8w5qs8s7av5w69a5c6ixzkajz",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-x86_64:band3g0c4a2da2snqja7ibi55absa124",
     },
 )
 
@@ -513,7 +513,7 @@ platform(
     name = "ash-strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-x86_64-cc:s39jya0cb3bgfj5gnbxxnd5bhmfg4my6",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-coreutils-x86_64-cc:lc67h832ykdqlfa2wi17hgh8bvc6n4pg",
     },
 )
 
@@ -521,7 +521,7 @@ platform(
     name = "ash-strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686:l7wzlcy4c00h1rpa9lxy3zdrsqq9xbbq",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686:l8nab0iym3h9j8zwrdjajclrj5bkchkw",
     },
 )
 
@@ -529,7 +529,7 @@ platform(
     name = "ash-strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-cc:zbmic1hf487hlnf59p8rwcgijg8ijkbv",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-cc:6kqspd7pabz3sbzygc3h26a7mgr27vlr",
     },
 )
 
@@ -537,7 +537,7 @@ platform(
     name = "ash-strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-cc-x86_64:pkc4qd00bm0kz40457zk56hndc1c8my6",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-cc-x86_64:i2s7jdakmxp06s2c5wgqy2vxnzajy5ms",
     },
 )
 
@@ -545,7 +545,7 @@ platform(
     name = "ash-strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-cc-x86_64-cc:s1zk3ma66kj7d1avmc01b6j7qafg4idm",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-cc-x86_64-cc:pnwxwiw6l5flfzqllzd0nbbq5hky81bj",
     },
 )
 
@@ -553,7 +553,7 @@ platform(
     name = "ash-strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-x86_64:17i2nqac27bixh7qbdjkh1fqgkwva8ni",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-x86_64:y6hpj1iy1jnzbiqhb07kn666g9ycgklh",
     },
 )
 
@@ -561,7 +561,7 @@ platform(
     name = "ash-strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-x86_64-cc:z6gc02f1nq4gln00bb6xx2z9rxblhffk",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-i686-x86_64-cc:fqr0sxq36g770z7ifd4rm0hw4jlcxb8b",
     },
 )
 
@@ -569,7 +569,7 @@ platform(
     name = "ash-strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-x86_64:y0rsfdy54kw7vk0ldy0fm457jqpyr0dw",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-x86_64:96rywgz5g1nwpy22hb2d4hbn4vfhvjmr",
     },
 )
 
@@ -577,7 +577,7 @@ platform(
     name = "ash-strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-x86_64-cc:c4bqkmsi72b503h34q53y6kcn1h27rn4",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-strace-x86_64-cc:pmsn35y0crf9wm5iyd5lcmj4zw7mg02n",
     },
 )
 
@@ -585,7 +585,7 @@ platform(
     name = "ash-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-x86_64:qfif9kzhv5z2zq97n89c6f6xni2p8pmj",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-x86_64:1js5dxr7rkm0rg50985mavw8i9flfz17",
     },
 )
 
@@ -593,7 +593,7 @@ platform(
     name = "ash-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/ash-x86_64-cc:a1hap5d1s0x1vf5a4fhx309c64ahkfwx",
+        "container-image": "docker://harbor.puqu.io/starterkit/ash-x86_64-cc:rgxmbwfqli1p3mnhm9sg11a1m7ijgkp9",
     },
 )
 
@@ -601,7 +601,7 @@ platform(
     name = "bash",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash:3f5fqwy6nwvcfs55bwbhh4vw3yhgbp3m",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash:zdv440mv2zipsi4iyzhxip8dygx13q2p",
     },
 )
 
@@ -609,7 +609,7 @@ platform(
     name = "bash-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils:yhgkyn71g3a38v3zsnaj5c6da4qsq27h",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils:810xh7hnkcdm8pzy1ph4yz5zrwxgfaib",
     },
 )
 
@@ -617,7 +617,7 @@ platform(
     name = "bash-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686:4z90jw8k0dqywizs7sn87jf9bn56s6wf",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686:zb9dx707fh7j38qbzvqjdv4jbxcg1vr2",
     },
 )
 
@@ -625,7 +625,7 @@ platform(
     name = "bash-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-cc:9k2lxcg80hddm4dw6g1g02gw79wm3ddd",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-cc:7wxqw9p8584bl1z6hzrrnj7r8s0zs556",
     },
 )
 
@@ -633,7 +633,7 @@ platform(
     name = "bash-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-cc-x86_64:6lg1ps4hg5c5726li28xvnsxc1yfgjkh",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-cc-x86_64:hp1lrpjg38b7f46plykjyvcw8m2ib95a",
     },
 )
 
@@ -641,7 +641,7 @@ platform(
     name = "bash-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-cc-x86_64-cc:8254s5ybmyrxxbh97chh78s3sg7vslhn",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-cc-x86_64-cc:qsq539d1kx6r3hfsqvml3ppchgy1ibg2",
     },
 )
 
@@ -649,7 +649,7 @@ platform(
     name = "bash-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-x86_64:hyj4n82nbcii48jjh9vx9n0l8qnnl2cb",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-x86_64:scbxc97cpqzzhjss0rp5aala3hdy8i3d",
     },
 )
 
@@ -657,7 +657,7 @@ platform(
     name = "bash-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-x86_64-cc:nifhxyhmms1alf6khfshncj9r0990fag",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-i686-x86_64-cc:d6wbqbb2g09zq0id9bvs0kgr5pj59sj7",
     },
 )
 
@@ -665,7 +665,7 @@ platform(
     name = "bash-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-x86_64:n3hnbnsr2ljaxz8k0iipa3bi7x0q675d",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-x86_64:q8cwalhgv8p8jpmlvn504h30imzw8ahb",
     },
 )
 
@@ -673,7 +673,7 @@ platform(
     name = "bash-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-x86_64-cc:x1szrix9h4md71acw8l9pxx0q550axa8",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-coreutils-x86_64-cc:2wgjj260ff4aclgbgf8fi5wx7sbfxy9p",
     },
 )
 
@@ -681,7 +681,7 @@ platform(
     name = "bash-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686:zgjnhjiw3yk4znc925044lcfgyzz42vy",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686:14c1jxf56db0bbfadhp569vnhw5jwg7v",
     },
 )
 
@@ -689,7 +689,7 @@ platform(
     name = "bash-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-cc:ygkkk4260vhq2xyzbsys416hphyyblni",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-cc:i1p04mml8r4is093i4m3ahxm6spiapqk",
     },
 )
 
@@ -697,7 +697,7 @@ platform(
     name = "bash-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-cc-x86_64:ljw7af0p7f1xwvv1mj0f231xb0rnklmc",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-cc-x86_64:ri1bsr9w2nim44zlv0fv4667w7pryrsa",
     },
 )
 
@@ -705,7 +705,7 @@ platform(
     name = "bash-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-cc-x86_64-cc:zx4nm88jfnp35kgmk36w4nvxnb3z1hl9",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-cc-x86_64-cc:1zxbag614b2z2nvmsr5y75hs5j3yg5zq",
     },
 )
 
@@ -713,7 +713,7 @@ platform(
     name = "bash-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-x86_64:21nwggfxjy9n1ssyyrvf87jl1nrss20f",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-x86_64:5wqvldz6yqs2d9jx7lwayac9rzw5sz7a",
     },
 )
 
@@ -721,7 +721,7 @@ platform(
     name = "bash-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-x86_64-cc:wghsrv2kn5k2wji32wnlymm46fa9vn5s",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-i686-x86_64-cc:383kzyxbmw3lbc8samsnsv6q2lr7wa98",
     },
 )
 
@@ -729,7 +729,7 @@ platform(
     name = "bash-strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace:lxqmb60ag8k7gbwizk9y49sjrpapj7dj",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace:c6n4ik5pp3vasfnhxnbzp8khjif5jh1v",
     },
 )
 
@@ -737,7 +737,7 @@ platform(
     name = "bash-strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils:jmbc69nyxnsbkn02rjkgr6xd2apiax81",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils:z05cw1x87r0nwmh42av0pgpllvklfycl",
     },
 )
 
@@ -745,7 +745,7 @@ platform(
     name = "bash-strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686:wpyncl86qnrfbr56c4vv1s6dr38xl9z8",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686:l8z9bl2nvc6vvdxgpc51jyy1i968wm97",
     },
 )
 
@@ -753,7 +753,7 @@ platform(
     name = "bash-strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-cc:9rb8pcdxpabv4pmvkv9hqzi2bi9z8z57",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-cc:xvw79ry7jvihdha31bh5qcfrkizkajs3",
     },
 )
 
@@ -761,7 +761,7 @@ platform(
     name = "bash-strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-cc-x86_64:cyiq1xj3gb0l94msamlypxj5nb9b62nw",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-cc-x86_64:hhpkas45l8nkm84xbwjxqc00iapklii5",
     },
 )
 
@@ -769,7 +769,7 @@ platform(
     name = "bash-strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-cc-x86_64-cc:kmzy2zrj776lh091x3ml3p7sywb1cn60",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-cc-x86_64-cc:d9jsnz7i4cja9rvc187yfv6r1l7gldig",
     },
 )
 
@@ -777,7 +777,7 @@ platform(
     name = "bash-strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-x86_64:nkvqjhklqc9c4ynb68ng55fljgzp8yij",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-x86_64:lfz44j773safzzlrhc995vg4cv30bi2a",
     },
 )
 
@@ -785,7 +785,7 @@ platform(
     name = "bash-strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-x86_64-cc:0xr2w52rl6l10rbyx7pddmg5d8nbz3sy",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-i686-x86_64-cc:m1fhf5im4v9wkw7wdrj9pyiclbsvs2jp",
     },
 )
 
@@ -793,7 +793,7 @@ platform(
     name = "bash-strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-x86_64:nya5rj0nrbd4zkihqk20q6h8fs8diy57",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-x86_64:5sc8a9gqd42r7k2v42nkv9mprwagq6hz",
     },
 )
 
@@ -801,7 +801,7 @@ platform(
     name = "bash-strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-x86_64-cc:3pbjdi39h7y8nsrmprcifp15dkrdq54n",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-coreutils-x86_64-cc:l697njg6hag3s131z300b9kk1r3xpffh",
     },
 )
 
@@ -809,7 +809,7 @@ platform(
     name = "bash-strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686:4n6jar5ailaq1n6zhg93x8dcycg5jns4",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686:hl77f2lfwswxgr2qj323b6afzhvzszqn",
     },
 )
 
@@ -817,7 +817,7 @@ platform(
     name = "bash-strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-cc:qsnxg0qz65791w6rv5q5bfzyavyg86wy",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-cc:dczqxsfcshy8hjb01mhw6l7vbjb2rsld",
     },
 )
 
@@ -825,7 +825,7 @@ platform(
     name = "bash-strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-cc-x86_64:14h1qpfvdqj29k6hczrdgh8ai10fyw01",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-cc-x86_64:ji20flhn3lvh2r30qb50d6r43wib9sr6",
     },
 )
 
@@ -833,7 +833,7 @@ platform(
     name = "bash-strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-cc-x86_64-cc:b7fa0bhpzwbn6nfnkbgny95dcly4rl2m",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-cc-x86_64-cc:13hp7hyvyc2d5kbdq1zpayi233gwmc7w",
     },
 )
 
@@ -841,7 +841,7 @@ platform(
     name = "bash-strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-x86_64:3qilidwiabzz9s56bysmcaqnydr6nyd2",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-x86_64:qzf26ywskmlg1gq3aydifyllzjgap5ig",
     },
 )
 
@@ -849,7 +849,7 @@ platform(
     name = "bash-strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-x86_64-cc:vladn87s1wyj0v4pd3ja1zmcx8rdpwki",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-i686-x86_64-cc:i18ppdfqd3kyi7gnm5wmfccyah5v69rn",
     },
 )
 
@@ -857,7 +857,7 @@ platform(
     name = "bash-strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-x86_64:sjb0vk3parrkqlfjh6p5l5jpd22n6izx",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-x86_64:y3s8vb4rbvmzdby2jawgwjyc95p0z55q",
     },
 )
 
@@ -865,7 +865,7 @@ platform(
     name = "bash-strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-x86_64-cc:08gci34z5jvhjjzhhrx9d7cv96kl617a",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-strace-x86_64-cc:m2dgwcl6hz8093bfv2ka8k653w7bg7a4",
     },
 )
 
@@ -873,7 +873,7 @@ platform(
     name = "bash-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-x86_64:l8jpfyxz5s8xk2wzpcs1bfppfy9zk9ri",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-x86_64:m8j7gipnhyagzjq17xmny8jyxbqb90kk",
     },
 )
 
@@ -881,7 +881,7 @@ platform(
     name = "bash-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/bash-x86_64-cc:znnr05lifda9n24w7ra68sv3hpgfnjkw",
+        "container-image": "docker://harbor.puqu.io/starterkit/bash-x86_64-cc:vj250vi4yywzam7blz1xv3cs5zplj81r",
     },
 )
 
@@ -889,7 +889,7 @@ platform(
     name = "coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils:7azvxl38fr7f6grz7mgys4v1qr52clvd",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils:glncz2bmqk2bv1midp2n8zpy7npshky8",
     },
 )
 
@@ -897,7 +897,7 @@ platform(
     name = "coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686:cqnkamqv27swyvb4ndz31cpx4g5vlsyq",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686:pmhi8923gdcfgll4iq70zvl13sm50rda",
     },
 )
 
@@ -905,7 +905,7 @@ platform(
     name = "coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-cc:pgafsrsrjd4r5zqb6xpi95a5lpcjdik1",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-cc:6dan6xm1vlqxyfb17jwqhxmx94kr4ind",
     },
 )
 
@@ -913,7 +913,7 @@ platform(
     name = "coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-cc-x86_64:pw78bqxx38pc1d3jxw20mry1h4jirkm0",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-cc-x86_64:1mjw7fkaycrwwqw2yq57larnpj3183g3",
     },
 )
 
@@ -921,7 +921,7 @@ platform(
     name = "coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-cc-x86_64-cc:jxa6k87gm57w33lrwxcw0aydnl97fly3",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-cc-x86_64-cc:9jz6arkpj6306v8aw83fp7cy47bzw1bh",
     },
 )
 
@@ -929,7 +929,7 @@ platform(
     name = "coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-x86_64:0z203228bmh3dgnb9bqs71jr14lhf2aa",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-x86_64:pcbhfachvs0zgp2m4asvyhjgfiqc0h2r",
     },
 )
 
@@ -937,7 +937,7 @@ platform(
     name = "coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-x86_64-cc:a9p2qdy2m8cqypvp9chxw2zwi0w9qybf",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-i686-x86_64-cc:0a4kg9cqqv4zc3n1w9p5dl9x2fixlb15",
     },
 )
 
@@ -945,7 +945,7 @@ platform(
     name = "coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-x86_64:vsxax39zl87kv7d01wjvkj4lffay30nh",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-x86_64:6zyvcbsypgfv796kpkynjgd0vfsrmb20",
     },
 )
 
@@ -953,7 +953,7 @@ platform(
     name = "coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-x86_64-cc:yp7ddwg22bdl9axnma82dv8g4i965sjl",
+        "container-image": "docker://harbor.puqu.io/starterkit/coreutils-x86_64-cc:b1xnp82blrnmn73lfh0v9iw5q2rnnrhm",
     },
 )
 
@@ -961,7 +961,7 @@ platform(
     name = "i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/i686:nmg7fc39wv7if7yg044c9mzlw6jpf71q",
+        "container-image": "docker://harbor.puqu.io/starterkit/i686:0imq1w2qwp0ac6zqs85dsf4rknj8q839",
     },
 )
 
@@ -969,7 +969,7 @@ platform(
     name = "i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/i686-cc:00650nbqs61d1la4szckqrw3am8x8631",
+        "container-image": "docker://harbor.puqu.io/starterkit/i686-cc:rc0dyvp8aa5q3hnn1b72bilig1z6m5d9",
     },
 )
 
@@ -977,7 +977,7 @@ platform(
     name = "i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/i686-cc-x86_64:nrgbqj9m2pjjs5pdadlk8w4kb9s8i8q2",
+        "container-image": "docker://harbor.puqu.io/starterkit/i686-cc-x86_64:fghbm1gycyp2vz8pap9sj4cxcvp9pjc2",
     },
 )
 
@@ -985,7 +985,7 @@ platform(
     name = "i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/i686-cc-x86_64-cc:3bwblc7vmg8q4s4ysfxj037nxk4zpv30",
+        "container-image": "docker://harbor.puqu.io/starterkit/i686-cc-x86_64-cc:xjzg6sp6lfqvr6z0j06khlwcqxr5q5h5",
     },
 )
 
@@ -993,7 +993,7 @@ platform(
     name = "i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/i686-x86_64:5ah9ac4h0mkqcdq1zqc4mnjw6lay63y1",
+        "container-image": "docker://harbor.puqu.io/starterkit/i686-x86_64:3jb53kjfc6yyxav5nmgnzbjpii8c6c84",
     },
 )
 
@@ -1001,7 +1001,7 @@ platform(
     name = "i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/i686-x86_64-cc:6w4yr0di5yl0yzkwiz0v1pfd22qibprh",
+        "container-image": "docker://harbor.puqu.io/starterkit/i686-x86_64-cc:3yccalha69sfk2lrx9wgkg5s7vv0b342",
     },
 )
 
@@ -1009,7 +1009,7 @@ platform(
     name = "strace",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace:cv6basw026290hf8d088kig124aqpwwf",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace:q8852n4a156mpydyk0z2qy6ydjqr006v",
     },
 )
 
@@ -1017,7 +1017,7 @@ platform(
     name = "strace-coreutils",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils:6hl35qc3ak8jmslyhmzv7wr4q0kdl915",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils:dmzy0c93k4wwljxwdm5kgwaqh2aqkv1w",
     },
 )
 
@@ -1025,7 +1025,7 @@ platform(
     name = "strace-coreutils-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686:wlbgrsvfy0lfxsmar8bx79sdar4wgbgd",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686:qia11cxwhcz2c178f9pg9k8vkyv6z4v5",
     },
 )
 
@@ -1033,7 +1033,7 @@ platform(
     name = "strace-coreutils-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-cc:jywk9rdm2k86r07v9axv6s1xj0rp2lxd",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-cc:nnsnkq5jdrnm2lmm7078x1jvc4f1vswj",
     },
 )
 
@@ -1041,7 +1041,7 @@ platform(
     name = "strace-coreutils-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-cc-x86_64:4pk8rq5y271nwbrrm6h7nc9y9jlnrdbw",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-cc-x86_64:20i2bdgsg6pbfwiadb1p2s01h6lj3dip",
     },
 )
 
@@ -1049,7 +1049,7 @@ platform(
     name = "strace-coreutils-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-cc-x86_64-cc:bf3zy04c2k6myibj39j0j70kmqbmk717",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-cc-x86_64-cc:3qcyr6hh0688d056sbh1ks56h375101n",
     },
 )
 
@@ -1057,7 +1057,7 @@ platform(
     name = "strace-coreutils-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-x86_64:k84bj2p48527yrlzgx5zwkblvxza0fjb",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-x86_64:mqr3jlrn7bh08zak7660jxb5sk4z803x",
     },
 )
 
@@ -1065,7 +1065,7 @@ platform(
     name = "strace-coreutils-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-x86_64-cc:svhcwvan5lhz1di0f0y4wgmvxxk6fqmc",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-i686-x86_64-cc:qkm5zfj4mpfkp72n7970cy9ad9b1f7wl",
     },
 )
 
@@ -1073,7 +1073,7 @@ platform(
     name = "strace-coreutils-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-x86_64:qpna4kmx49cd8ij5mbzi39c4dxlwv9y5",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-x86_64:ww6yd49s4g8a4h9db99ypj4f4hk0g7sk",
     },
 )
 
@@ -1081,7 +1081,7 @@ platform(
     name = "strace-coreutils-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-x86_64-cc:0zky2q3lzfr5kqc10fz9s18j6rpb4dkf",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-coreutils-x86_64-cc:9h91ichn7hdcrrydnwsmgxpwadc3fbwp",
     },
 )
 
@@ -1089,7 +1089,7 @@ platform(
     name = "strace-i686",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686:dl03cj2j02w57jy8xfcz0bxajm7vply9",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686:w4z2f10jxp6mjy4l6ps3k304jpk44b0p",
     },
 )
 
@@ -1097,7 +1097,7 @@ platform(
     name = "strace-i686-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-cc:dc8rv70rgv417m2mlaqsp0376p902ffn",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-cc:vm15sa7x9apby123hj3iasxd6hv97ssb",
     },
 )
 
@@ -1105,7 +1105,7 @@ platform(
     name = "strace-i686-cc-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-cc-x86_64:1ypl5rkibqwd5dsambxv97y9haid7kv3",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-cc-x86_64:lsaz64yasihi2zlrh8770skdxifi0242",
     },
 )
 
@@ -1113,7 +1113,7 @@ platform(
     name = "strace-i686-cc-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-cc-x86_64-cc:fkdiyx41ch7rig4hvydq78hzp2v9b8vh",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-cc-x86_64-cc:ypkpqqrdvdjd32as2alfa0s8jxsszqdz",
     },
 )
 
@@ -1121,7 +1121,7 @@ platform(
     name = "strace-i686-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-x86_64:7rg07vkjl7ild8i0z4whr75sbjsml9zp",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-x86_64:8yxxdg9arxkq4n7cbv5fiwfm3kpj3qyf",
     },
 )
 
@@ -1129,7 +1129,7 @@ platform(
     name = "strace-i686-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-x86_64-cc:210q8j4yyn35inrrbfxikmsd3dma4f1q",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-i686-x86_64-cc:8il6cfzn3jp7zxbawnawc6cjflc49a0i",
     },
 )
 
@@ -1137,7 +1137,7 @@ platform(
     name = "strace-x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-x86_64:gdmydkhypb8g97qp71a3nkngb3ddcc8y",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-x86_64:36gjjw1f5zygix764250inv5rma4a00h",
     },
 )
 
@@ -1145,7 +1145,7 @@ platform(
     name = "strace-x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/strace-x86_64-cc:n40485hgbcjl2v5kg8k2clyp09qjk4xs",
+        "container-image": "docker://harbor.puqu.io/starterkit/strace-x86_64-cc:xs5czfckhqchcsmawn1cn92fb9mxw88q",
     },
 )
 
@@ -1153,7 +1153,7 @@ platform(
     name = "x86_64",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/x86_64:cawbsqx1q5izqiqrwad9x3bahwrisb9a",
+        "container-image": "docker://harbor.puqu.io/starterkit/x86_64:xdf5axqb6al253wzlyxbis4xz2jjxf1y",
     },
 )
 
@@ -1161,7 +1161,7 @@ platform(
     name = "x86_64-cc",
     parents = [":starterkit-x86_64-linux"],
     exec_properties = {
-        "container-image": "docker://harbor.puqu.io/starterkit/x86_64-cc:9pn62jvc46dqs5nligi5xb6gswgrlv4v",
+        "container-image": "docker://harbor.puqu.io/starterkit/x86_64-cc:93wbrsipsfkfmii2dadgp5gvvl3kldkp",
     },
 )
 
