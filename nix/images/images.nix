@@ -71,6 +71,8 @@
       ${optionalString (archs != []) ldSetupCommands}
       exec ${glibc.bin}/bin/ldconfig -v -f etc/ld.so.conf -C etc/ld.so.cache -r $PWD
       chmod -R u-w .
+      mkdir -p tmp
+      chmod 777 tmp
     '';
     image = dockerTools.buildImage {
       inherit name config copyToRoot extraCommands;
