@@ -1,7 +1,7 @@
 {lib}: let
   inherit
     (lib)
-    cartesianProductOfSets
+    cartesianProduct
     concatStringsSep
     nameValuePair
     listToAttrs
@@ -21,8 +21,8 @@ in {
       attrs,
     }:
       if builtins.isNull filter
-      then (cartesianProductOfSets attrs)
-      else builtins.filter filter (cartesianProductOfSets attrs);
+      then (cartesianProduct attrs)
+      else builtins.filter filter (cartesianProduct attrs);
   in
     listToAttrs (map (variant: let
       meta = metaFun variant;
