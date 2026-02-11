@@ -5,7 +5,7 @@
   buildPackages,
   lib,
 }: let
-  version = "4.7";
+  version = "5.0";
   baseURL = "http://downloads.yoctoproject.org/releases/uninative";
 
   fetchSource = arch:
@@ -13,8 +13,8 @@
       url = "${baseURL}/${version}/${arch}-nativesdk-libc.tar.xz";
       sha256 =
         if arch == "i686"
-        then "c5efa31450f3bbd63ea961d4e7c747ae41317937d429f65e1d5cf2050338e27a"
-        else "5800d4e9a129d1be09cf548918d25f74e91a7c1193ae5239d5b0c9246c486d2c";
+        then "sha256-lZzCU5tpL5uYYoJccySg/k0GH8p0L2wln2f1gcWa+VY="
+        else "sha256-lgReix4kLIqElCaoUGxwQ/NUs58rwANRkngOggXiPp0=";
     };
 
   buildUninative = {
