@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.14.0](https://github.com/explore-bzl/starterkit/compare/77fcc24e083dca66f11817251a35fb2ea000754f..v0.14.0) - 2026-02-12
+#### Features
+- update to uninative 5.0 - ([77fcc24](https://github.com/explore-bzl/starterkit/commit/77fcc24e083dca66f11817251a35fb2ea000754f)) - Artur Stachecki
+
+- - -
+
 ## [v0.13.0](https://github.com/explore-bzl/starterkit/compare/ffde06022ada48cd1938fdb758eae34167b2680a..v0.13.0) - 2026-02-11
 #### Features
 - (**update**) update the nixpkgs to latest as of 2026-02-11 - ([ffde060](https://github.com/explore-bzl/starterkit/commit/ffde06022ada48cd1938fdb758eae34167b2680a)) - Artur Stachecki
